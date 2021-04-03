@@ -5,7 +5,10 @@ import classes from "./Searchbar.module.css";
 export const Searchbar = () => {
   return (
     <div className={classes.Searchbar}>
-      <input placeholder="Search" />
+      <Input
+        placeholder="Search"
+        inputProps={{ "aria-label": "description" }}
+      />
     </div>
   );
 };
