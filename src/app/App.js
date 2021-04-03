@@ -4,7 +4,7 @@ import { Container } from "@material-ui/core";
 
 function App() {
   return (
-    <Container>
+    <Container maxWidth="xl">
       <div className="App">
         <header className="App-header">
           <Navbar />
