@@ -1,5 +1,10 @@
 import React from "react";
 
-export const PostListItem = () => {
-  return <h2>Individual Post goes here</h2>;
+export const PostListItem = ({ post }) => {
+  console.log(post);
+  return (
+    <div>
+      <h3>{post.data.title}</h3>
+    </div>
+  );
 };
