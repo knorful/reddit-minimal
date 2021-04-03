@@ -1,13 +1,18 @@
 import React from "react";
-import { shallow, render, mount } from "enzyme";
-import { createShallow } from "@material-ui/core/test-utils";
+import { createShallow, createMount } from "@material-ui/core/test-utils";
 import { Searchbar } from "../components/Navbar/Searchbar/Searchbar";
 
 describe("<Searchbar />", () => {
   let shallow;
+  let mount;
 
   beforeAll(() => {
     shallow = createShallow();
+    mount = createMount();
+  });
+
+  afterAll(() => {
+    mount.cleanUp();
   });
 
   test("renders correctly", () => {
@@ -17,7 +22,7 @@ describe("<Searchbar />", () => {
 
   test("renders input element with placeholder", () => {
     const wrapper = shallow(<Searchbar />);
-    const placeholder = "Search";
+    const placeholder = "Search...";
     expect(wrapper.props().children.props.placeholder).toEqual(placeholder);
   });
 });
