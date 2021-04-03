@@ -1,5 +1,9 @@
 import React from "react";
 
 export const Searchbar = () => {
-  return <h2>SearchBar</h2>;
+  return (
+    <div>
+      <input placeholder="Search" />
+    </div>
+  );
 };
