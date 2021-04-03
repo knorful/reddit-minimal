@@ -22,6 +22,7 @@ export const postsSlice = createSlice({
         state.hasError = false;
       })
       .addCase(loadAllPosts.fulfilled, (state, action) => {
+        state.posts = action.payload;
         state.isLoadingPosts = false;
         state.hasError = false;
       })
