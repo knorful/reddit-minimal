@@ -1,5 +1,6 @@
 .Navbar {
   display: flex;
+  align-items: center;
 }
 
 .Navbar h2 {
