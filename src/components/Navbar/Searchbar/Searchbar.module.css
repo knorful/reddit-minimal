@@ -1,3 +1,11 @@
 .Searchbar {
   margin-left: 25vw;
+  background-color: #f6faff;
+  padding: 0 10px;
+}
+
+@media only screen and (max-width: 281px) {
+  .Searchbar {
+    margin-left: 5vw;
+  }
 }
