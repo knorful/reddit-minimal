@@ -5,7 +5,9 @@ import classes from "./Navbar.module.css";
 export const Navbar = () => {
   return (
     <div className={classes.Navbar}>
-      <h2>Logo will go here!</h2>
+      <h2>
+        Reddit <span>Minimal</span>
+      </h2>
       <Searchbar />
     </div>
   );
