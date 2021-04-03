@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "../components/Navbar/Navbar";
+import { Posts } from "../features/posts/Posts";
 import { Container } from "@material-ui/core";
 import classes from "./App.module.css";
 
@@ -12,7 +13,7 @@ function App() {
         </header>
         <main>
           <aside>SubReddits</aside>
-          <div>Posts Will Go Here</div>
+          <Posts />
         </main>
       </div>
     </Container>
