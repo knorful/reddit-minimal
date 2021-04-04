@@ -7,10 +7,6 @@
   .App main {
     align-content: center;
   }
-  .subreddits {
-    display: none;
-  }
-
   .App main header {
     width: 100vw;
   }
