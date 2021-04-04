@@ -22,7 +22,7 @@ export const PostListItemSkeleton = () => {
         className={classes.paragraphSkeleton}
       />
       <Skeleton
-        style={{ marginTop: "10px" }}
+        className={classes.footerSkeleton}
         animation="wave"
         variant="text"
         width={200}

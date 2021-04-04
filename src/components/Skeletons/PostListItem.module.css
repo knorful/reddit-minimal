@@ -12,8 +12,13 @@
   margin-bottom: 20px;
 }
 
+.footerSkeleton {
+  margin-top: 10px;
+}
+
 @media only screen and (max-width: 420px) {
-  .paragraphSkeleton {
+  .paragraphSkeleton,
+  .footerSkeleton {
     max-width: 170px;
   }
 }
