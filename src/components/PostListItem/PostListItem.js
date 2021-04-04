@@ -1,5 +1,5 @@
-import { Avatar } from "@material-ui/core";
 import React from "react";
+import { Avatar } from "@material-ui/core";
 import CommentIcon from "@material-ui/icons/Comment";
 import classes from "./PostListItem.module.css";
 
@@ -15,14 +15,16 @@ const imageFile = (str) => {
   }
 };
 
-export const PostListItem = ({ post }) => {
-  const postData = post.data;
-  const validLinkCheck = imageFile(postData.thumbnail);
-  const hasThumbnail = validLinkCheck ? (
-    <Avatar alt={postData.subreddit} src={postData.thumbnail} />
-  ) : (
-    <Avatar>{postData.subreddit.substring(0, 1)}</Avatar>
-  );
+export const PostListItem = ({ post, loading }) => {
+  const postData = post ? post.data : null;
+  const validLinkCheck = post ? imageFile(postData.thumbnail) : null;
+  const hasThumbnail = post ? (
+    validLinkCheck ? (
+      <Avatar alt={postData.subreddit} src={postData.thumbnail} />
+    ) : (
+      <Avatar>{postData.subreddit.substring(0, 1)}</Avatar>
+    )
+  ) : null;
 
   return (
     <div className={classes.PostListItem}>

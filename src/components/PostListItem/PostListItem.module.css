@@ -12,6 +12,9 @@
   transition: all 0.4s;
 }
 
+.PostListItemSkeleton:hover {
+  transform: scale(1);
+}
 .header {
   display: flex;
   align-items: center;
