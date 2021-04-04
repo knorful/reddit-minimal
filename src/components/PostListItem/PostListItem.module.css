@@ -3,6 +3,13 @@
   padding: 25px;
   margin: 20px 0;
   background-color: white;
+  border-radius: 8px;
+}
+
+.PostListItem:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 5px rgb(158, 158, 158);
+  transition: all 0.4s;
 }
 
 .header {
@@ -19,6 +26,10 @@
 .subredditName {
   font-weight: bold;
   margin-right: 15px;
+}
+
+.postTitle {
+  max-width: 600px;
 }
 
 .comment {

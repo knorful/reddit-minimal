@@ -35,7 +35,7 @@ export const PostListItem = ({ post }) => {
           <p className={classes.author}>Posted by u/{postData.author}</p>
         </div>
       </div>
-      <h3>{postData.title}</h3>
+      <h3 className={classes.postTitle}>{postData.title}</h3>
       <div className={classes.footer}>
         <div className={classes.comment}>
           <CommentIcon />
