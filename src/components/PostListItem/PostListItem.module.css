@@ -71,6 +71,20 @@
   font-weight: 500;
 }
 
+@media only screen and (max-width: 501px) {
+  .mainContent {
+    flex-direction: column;
+  }
+
+  .contentLink {
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    justify-content: center;
+  }
+}
+
 @media only screen and (max-width: 376px) {
   .subredditName {
     margin-bottom: 0;
