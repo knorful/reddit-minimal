@@ -2,6 +2,7 @@
   margin-left: 25vw;
   background-color: #f9fcff;
   padding: 0 10px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 281px) {
