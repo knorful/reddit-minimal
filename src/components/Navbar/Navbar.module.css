@@ -1,8 +1,10 @@
 .Navbar {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: space-between;
   background-color: white;
+  padding: 0 25px;
 }
 
 .Navbar h2 {
