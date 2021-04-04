@@ -5,3 +5,8 @@
   background-color: white;
   border-radius: 8px;
 }
+
+.headerSkeleton {
+  display: flex;
+  margin-bottom: 20px;
+}
