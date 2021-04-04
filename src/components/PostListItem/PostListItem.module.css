@@ -53,6 +53,8 @@
 .comment p,
 .ups p {
   margin: 0px 5px;
+  color: rgb(110, 110, 110);
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 376px) {

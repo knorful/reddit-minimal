@@ -16,6 +16,12 @@ const imageFile = (str) => {
   }
 };
 
+const kFormatter = (num) => {
+  return Math.abs(num) > 999
+    ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "k"
+    : Math.sign(num) * Math.abs(num);
+};
+
 export const PostListItem = ({ post, loading }) => {
   const postData = post ? post.data : null;
   const validLinkCheck = post ? imageFile(postData.thumbnail) : null;
@@ -26,6 +32,8 @@ export const PostListItem = ({ post, loading }) => {
       <Avatar>{postData.subreddit.substring(0, 1)}</Avatar>
     )
   ) : null;
+
+  const voteCount = kFormatter(postData.ups);
 
   return (
     <div className={classes.PostListItem}>
@@ -42,7 +50,7 @@ export const PostListItem = ({ post, loading }) => {
       <div className={classes.footer}>
         <div className={classes.ups}>
           <FavoriteBorderIcon />
-          <p>{postData.ups}</p>
+          <p>{voteCount}</p>
         </div>
         <div className={classes.comment}>
           <CommentIcon />
