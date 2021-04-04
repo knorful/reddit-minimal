@@ -12,7 +12,7 @@ export const postsSlice = createSlice({
   name: "posts",
   initialState: {
     posts: [],
-    isLoadingPosts: false,
+    isLoadingPosts: true,
     hasError: false,
   },
   extraReducers: (builder) => {
