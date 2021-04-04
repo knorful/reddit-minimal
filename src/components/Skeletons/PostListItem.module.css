@@ -10,3 +10,9 @@
   display: flex;
   margin-bottom: 20px;
 }
+
+@media only screen and (max-width: 420px) {
+  .paragraphSkeleton {
+    max-width: 170px;
+  }
+}
