@@ -7,7 +7,7 @@
   .App main {
     align-content: center;
   }
-  .App main aside {
+  .subreddits {
     display: none;
   }
 
