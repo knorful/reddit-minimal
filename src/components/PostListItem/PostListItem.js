@@ -1,6 +1,7 @@
 import React from "react";
 import { Avatar } from "@material-ui/core";
 import CommentIcon from "@material-ui/icons/Comment";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import classes from "./PostListItem.module.css";
 
 const imageFile = (str) => {
@@ -39,6 +40,10 @@ export const PostListItem = ({ post, loading }) => {
       </div>
       <h3 className={classes.postTitle}>{postData.title}</h3>
       <div className={classes.footer}>
+        <div className={classes.ups}>
+          <FavoriteBorderIcon />
+          <p>{postData.ups}</p>
+        </div>
         <div className={classes.comment}>
           <CommentIcon />
           <p>COMMENTS</p>

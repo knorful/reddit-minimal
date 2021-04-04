@@ -35,12 +35,23 @@
   max-width: 600px;
 }
 
+.footer {
+  display: flex;
+}
+
+.ups {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
 .comment {
   display: flex;
   align-items: center;
 }
 
-.comment p {
+.comment p,
+.ups p {
   margin: 0px 5px;
 }
 
