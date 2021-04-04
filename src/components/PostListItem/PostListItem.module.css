@@ -1,0 +1,13 @@
+.PostListItem {
+  border: 1px solid rgb(230, 230, 230);
+  padding: 25px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.subredditName {
+  margin-left: 25px;
+}
