@@ -35,6 +35,20 @@
   max-width: 600px;
 }
 
+.mainContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contentLink {
+  text-decoration: none;
+  border: 1px solid #ff4552;
+  padding: 10px 15px;
+  color: rgb(97, 96, 96);
+  border-radius: 20px;
+}
+
 .footer {
   display: flex;
 }
