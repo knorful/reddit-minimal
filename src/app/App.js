@@ -6,17 +6,19 @@ import classes from "./App.module.css";
 
 function App() {
   return (
-    <Container>
-      <div className={classes.App}>
-        <header className="App-header">
-          <Navbar />
-        </header>
+    <div className={classes.App}>
+      <header className="App-header">
+        <Navbar />
+      </header>
+      <Container>
         <main>
           <aside>SubReddits</aside>
-          <Posts />
+          <Container maxWidth="md">
+            <Posts />
+          </Container>
         </main>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 }
 
