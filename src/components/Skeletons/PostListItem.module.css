@@ -4,6 +4,7 @@
   margin: 20px 0;
   background-color: white;
   border-radius: 8px;
+  flex-shrink: 1;
 }
 
 .headerSkeleton {

@@ -1,10 +1,7 @@
 import { Skeleton } from "@material-ui/lab";
 import classes from "./PostListItem.module.css";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 export const PostListItemSkeleton = () => {
-  const matches = useMediaQuery("(min-width:600px)");
-
   return (
     <div className={classes.PostListItemSkeleton}>
       <div className={classes.headerSkeleton}>
