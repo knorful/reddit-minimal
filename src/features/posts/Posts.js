@@ -27,7 +27,7 @@ export const Posts = () => {
               </div>
             ))
         : posts.map((post, key) => (
-            <PostListItem key={key} post={post} loading={loading} />
+            <PostListItem key={post.data.id} post={post} loading={loading} />
           ))}
     </section>
   );
