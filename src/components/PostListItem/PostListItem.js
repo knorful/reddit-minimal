@@ -26,10 +26,12 @@ export const PostListItem = ({ post }) => {
     <div className={classes.PostListItem}>
       <div className={classes.header}>
         {hasThumbnail}
-        <p className={classes.subredditName}>
-          {postData.subreddit_name_prefixed}
-        </p>
-        <p className={classes.author}>Posted by u/{postData.author}</p>
+        <div className={classes.headerContent}>
+          <p className={classes.subredditName}>
+            {postData.subreddit_name_prefixed}
+          </p>
+          <p className={classes.author}>Posted by u/{postData.author}</p>
+        </div>
       </div>
       <h3>{postData.title}</h3>
     </div>
