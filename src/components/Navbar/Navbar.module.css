@@ -1,5 +1,6 @@
 .Navbar {
   background-color: white;
+  box-shadow: 5px 5px 5px rgb(209, 209, 209);
 }
 
 .NavbarContent {
