@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadAllPosts, selectAllPosts, isLoading } from "./postsSlice";
+import { loadPopularPosts, selectAllPosts, isLoading } from "./postsSlice";
 import { PostListItem } from "../../components/PostListItem/PostListItem";
 import { PostListItemSkeleton } from "../../components/Skeletons/PostListItem";
 import classes from "./Posts.module.css";
@@ -11,7 +11,7 @@ export const Posts = () => {
   const loading = useSelector(isLoading);
 
   useEffect(() => {
-    dispatch(loadAllPosts());
+    dispatch(loadPopularPosts());
   }, [dispatch]);
 
   return (
