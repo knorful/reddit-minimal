@@ -1,9 +1,10 @@
 .PostListItem {
-  border: 1px solid rgb(230, 230, 230);
+  /* border: 1px solid rgb(230, 230, 230); */
   padding: 25px;
   margin: 20px 0;
   background-color: white;
   border-radius: 8px;
+  border: 2px solid #ff4552;
 }
 
 .PostListItem:hover {
