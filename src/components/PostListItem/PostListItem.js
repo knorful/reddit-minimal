@@ -66,8 +66,11 @@ export const PostListItem = ({ post, loading }) => {
         </div>
       </div>
       <div className={classes.mainContent}>
-        <Link to={`/post/${postData.subreddit}/${postData.id}`}>
-          <h3 className={classes.postTitle}>{postData.title}</h3>
+        <Link
+          className={classes.postTitle}
+          to={`/post/${postData.subreddit}/${postData.id}`}
+        >
+          <h3>{postData.title}</h3>
         </Link>
         {hasContentImg}
       </div>
