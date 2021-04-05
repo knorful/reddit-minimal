@@ -53,7 +53,7 @@ export const PostListItem = ({ post, loading }) => {
     ) : null
   ) : null;
   const voteCount = Helpers.kFormatter(postData.ups);
-  console.log("from postitem", postData);
+
   return (
     <div className={classes.PostListItem}>
       <div className={classes.header}>
@@ -68,7 +68,7 @@ export const PostListItem = ({ post, loading }) => {
       <div className={classes.mainContent}>
         <Link
           className={classes.postTitle}
-          to={`/post/${postData.subreddit}/${postData.id}`}
+          to={`/post/${postData.subreddit}/comments/${postData.id}`}
         >
           <h3>{postData.title}</h3>
         </Link>
