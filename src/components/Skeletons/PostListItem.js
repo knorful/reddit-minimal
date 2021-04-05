@@ -14,7 +14,6 @@ export const PostListItemSkeleton = () => {
         />
       </div>
       <Skeleton
-        fitContent
         animation="wave"
         variant="rect"
         width={480}
