@@ -1,6 +1,7 @@
 .Subreddits {
   background-color: white;
   border-radius: 8px;
+  border: 2px solid #ff4552;
   padding: 25px 10px;
   width: 350px;
   margin: 20px 0;
