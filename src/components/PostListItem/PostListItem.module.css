@@ -7,9 +7,9 @@
 }
 
 .PostListItem:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
   box-shadow: 5px 5px 5px rgb(158, 158, 158);
-  transition: all 0.4s;
+  transition: all 0.2s;
 }
 
 .PostListItemSkeleton:hover {

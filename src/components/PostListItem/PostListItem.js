@@ -54,9 +54,9 @@ export const PostListItem = ({ post, loading }) => {
           ></CardMedia>
         </CardActionArea>
       </Card>
-    ) : (
+    ) : postData.url_overridden_by_dest ? (
       <a
-        href={postData.url}
+        href={postData.url_overridden_by_dest}
         alt={postData.title}
         target="_blank"
         rel="noreferrer"
@@ -64,7 +64,7 @@ export const PostListItem = ({ post, loading }) => {
       >
         External Link
       </a>
-    )
+    ) : null
   ) : null;
 
   const voteCount = kFormatter(postData.ups);
