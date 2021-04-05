@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Avatar } from "@material-ui/core";
 import CommentIcon from "@material-ui/icons/Comment";
 import Card from "@material-ui/core/Card";
@@ -34,7 +35,7 @@ export const PostListItem = ({ post, loading }) => {
             component="img"
             alt={postData.subreddit}
             height="140"
-            style={{ width: "250px", maxWidth: "320px" }}
+            className={classes.cardMedia}
             image={postData.url}
           ></CardMedia>
         </CardActionArea>
@@ -51,9 +52,8 @@ export const PostListItem = ({ post, loading }) => {
       </a>
     ) : null
   ) : null;
-
   const voteCount = Helpers.kFormatter(postData.ups);
-
+  console.log("from postitem", postData);
   return (
     <div className={classes.PostListItem}>
       <div className={classes.header}>
@@ -66,7 +66,9 @@ export const PostListItem = ({ post, loading }) => {
         </div>
       </div>
       <div className={classes.mainContent}>
-        <h3 className={classes.postTitle}>{postData.title}</h3>
+        <Link to={`/post/${postData.subreddit}/${postData.id}`}>
+          <h3 className={classes.postTitle}>{postData.title}</h3>
+        </Link>
         {hasContentImg}
       </div>
       <div className={classes.footer}>
@@ -75,8 +77,17 @@ export const PostListItem = ({ post, loading }) => {
           <p>{voteCount}</p>
         </div>
         <div className={classes.comment}>
-          <CommentIcon />
-          <p>COMMENTS</p>
+          <Link
+            to={`/post/${postData.subreddit}/${postData.id}`}
+            className={classes.commentBtn}
+          >
+            <button>
+              <CommentIcon />
+              <p style={{ fontWeight: "500", fontSize: "1rem" }}>
+                {Helpers.kFormatter(postData.num_comments)} COMMENTS
+              </p>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

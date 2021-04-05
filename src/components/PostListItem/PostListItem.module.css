@@ -57,6 +57,11 @@
   transition: all 0.2s;
 }
 
+.cardMedia {
+  width: 250px;
+  max-width: 320px;
+}
+
 .footer {
   display: flex;
 }
@@ -72,14 +77,30 @@
   align-items: center;
 }
 
-.comment p,
+.commentBtn {
+  text-decoration: none;
+}
+
+.commentBtn button {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: none;
+}
+
+.commentBtn button:hover {
+  background-color: rgb(243, 243, 243);
+  cursor: pointer;
+}
+
+.commentBtn p,
 .ups p {
   margin: 0px 5px;
   color: rgb(110, 110, 110);
   font-weight: 500;
 }
 
-@media only screen and (max-width: 501px) {
+@media only screen and (max-width: 502px) {
   .mainContent {
     flex-direction: column;
   }
@@ -93,7 +114,7 @@
   }
 }
 
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 412px) {
   .subredditName {
     margin-bottom: 0;
   }
@@ -102,5 +123,11 @@
     margin: 0 10px;
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media only screen and (max-width: 281px) {
+  .author {
+    font-size: 0.6rem;
   }
 }
