@@ -5,33 +5,18 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import { Helpers } from "../../helpers/helpers";
 import classes from "./PostListItem.module.css";
-
-const imageFile = (str) => {
-  var myRegex = /(https?:\/\/.*\.(?:png|jpg))/i;
-
-  if (str.length === 0) {
-    return false;
-  }
-
-  if (myRegex.test(str)) {
-    return true;
-  }
-};
-
-const kFormatter = (num) => {
-  return Math.abs(num) > 999
-    ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "k"
-    : Math.sign(num) * Math.abs(num);
-};
 
 export const PostListItem = ({ post, loading }) => {
   const postData = post ? post.data : null;
   const validLinkCheckForThumbnail = post
-    ? imageFile(postData.thumbnail)
+    ? Helpers.imageFile(postData.thumbnail)
     : null;
 
-  const validLinkCheckForContentImg = post ? imageFile(postData.url) : null;
+  const validLinkCheckForContentImg = post
+    ? Helpers.imageFile(postData.url)
+    : null;
 
   const hasThumbnail = post ? (
     validLinkCheckForThumbnail ? (
@@ -67,7 +52,7 @@ export const PostListItem = ({ post, loading }) => {
     ) : null
   ) : null;
 
-  const voteCount = kFormatter(postData.ups);
+  const voteCount = Helpers.kFormatter(postData.ups);
 
   return (
     <div className={classes.PostListItem}>
