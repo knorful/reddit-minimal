@@ -1,5 +1,5 @@
 .Navbar {
-  background-color: white;
+  background-color: rgb(48, 48, 48);
   box-shadow: 5px 5px 5px rgb(209, 209, 209);
 }
 
@@ -16,5 +16,5 @@
 
 .Navbar span {
   font-style: italic;
-  color: black;
+  color: white;
 }
