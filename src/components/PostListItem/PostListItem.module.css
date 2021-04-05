@@ -49,6 +49,13 @@
   border-radius: 20px;
 }
 
+.contentLink:hover {
+  border: 3px solid #f82836;
+  background-color: #ff4552;
+  color: white;
+  transition: all 0.2s;
+}
+
 .footer {
   display: flex;
 }
