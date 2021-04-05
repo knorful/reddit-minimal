@@ -19,9 +19,9 @@
 }
 
 .expandBtn {
-  border: none;
   background-color: white;
   border-top: 2px solid rgb(185, 185, 185);
+  border-radius: 4px;
   color: rgb(65, 65, 65);
   font-size: 1.2rem;
   padding-top: 5px;
