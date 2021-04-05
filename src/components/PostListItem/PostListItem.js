@@ -81,14 +81,12 @@ export const PostListItem = ({ post, loading }) => {
         </div>
         <div className={classes.comment}>
           <Link
-            to={`/post/${postData.subreddit}/${postData.id}`}
+            to={`/post/${postData.subreddit}/comments/${postData.id}`}
             className={classes.commentBtn}
           >
             <button>
               <CommentIcon />
-              <p style={{ fontWeight: "500", fontSize: "1rem" }}>
-                {Helpers.kFormatter(postData.num_comments)} COMMENTS
-              </p>
+              <p style={{ fontWeight: "500", fontSize: "1rem" }}>COMMENTS</p>
             </button>
           </Link>
         </div>
