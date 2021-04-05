@@ -10,8 +10,6 @@ export const Posts = () => {
   const posts = useSelector(selectAllPosts);
   const loading = useSelector(isLoading);
 
-  console.log("testing", posts);
-
   useEffect(() => {
     dispatch(loadAllPosts());
   }, [dispatch]);
@@ -21,8 +19,8 @@ export const Posts = () => {
       {posts.length === 0
         ? Array(25)
             .fill(0)
-            .map((skeleton) => (
-              <div style={{ marginBottom: "20px" }}>
+            .map((skeleton, key) => (
+              <div key={key} style={{ marginBottom: "20px" }}>
                 <PostListItemSkeleton />
               </div>
             ))
