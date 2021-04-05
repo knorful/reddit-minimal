@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadPopularPosts, selectAllPosts, isLoading } from "./postsSlice";
 import { PostListItem } from "../../components/PostListItem/PostListItem";
-import { PostListItemSkeleton } from "../../components/Skeletons/PostListItem";
+import { PostListItemSkeleton } from "../../components/Skeletons/PostListItemSkeleton/PostListItem";
 import classes from "./Posts.module.css";
 
 export const Posts = () => {
