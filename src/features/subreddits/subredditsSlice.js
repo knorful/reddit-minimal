@@ -1,13 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { API } from "../../util/API";
 
 export const loadSubreddits = createAsyncThunk(
   "subreddits/loadSubreddits",
-  async () => {
-    const data = await axios
-      .get(`http://www.reddit.com/subreddits.json`)
-      .then((res) => res.data.data.children);
-    return data;
+  () => {
+    return API.loadSubreddits();
   }
 );
 

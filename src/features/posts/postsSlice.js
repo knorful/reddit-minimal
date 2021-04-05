@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { API } from "../../util/API";
 
 export const loadPopularPosts = createAsyncThunk(
-  "posts/loadAllPosts",
+  "posts/loadPopularPosts",
   async () => {
     return API.loadPopularPosts();
   }
