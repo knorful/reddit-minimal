@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { API } from "../../util/API";
 
-export const loadAllPosts = createAsyncThunk("posts/loadAllPosts", async () => {
-  const data = await axios
-    .get("https://www.reddit.com/r/popular.json")
-    .then((res) => res.data.data.children);
-  return data;
-});
+export const loadPopularPosts = createAsyncThunk(
+  "posts/loadAllPosts",
+  async () => {
+    return API.loadPopularPosts();
+  }
+);
 
 export const postsSlice = createSlice({
   name: "posts",
@@ -17,16 +17,16 @@ export const postsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(loadAllPosts.pending, (state, action) => {
+      .addCase(loadPopularPosts.pending, (state, action) => {
         state.isLoadingPosts = true;
         state.hasError = false;
       })
-      .addCase(loadAllPosts.fulfilled, (state, action) => {
+      .addCase(loadPopularPosts.fulfilled, (state, action) => {
         state.posts = action.payload;
         state.isLoadingPosts = false;
         state.hasError = false;
       })
-      .addCase(loadAllPosts.rejected, (state, action) => {
+      .addCase(loadPopularPosts.rejected, (state, action) => {
         state.isLoadingPosts = false;
         state.hasError = true;
       });
