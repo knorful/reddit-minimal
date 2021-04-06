@@ -17,6 +17,7 @@ import { Helpers } from "../../helpers/helpers";
 import { Subreddits } from "../../features/subreddits/Subreddits";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { PostSkeleton } from "../../components/Skeletons/PostSkeleton/Post";
+import ReactMarkdown from "react-markdown";
 import classes from "./post.module.css";
 
 export const Post = () => {
@@ -37,8 +38,9 @@ export const Post = () => {
       ? Helpers.ampersandConverter(post.preview.images[0].source.url)
       : null;
 
-  let checkForSelfText = post.length !== 0 ? post.selftext : null;
-  console.log(loadingPost);
+  let checkForSelfText =
+    post.length !== 0 ? <ReactMarkdown source={post.selftext} /> : null;
+
   return (
     <>
       <header>
@@ -52,6 +54,7 @@ export const Post = () => {
                 <PostSkeleton />
               ) : image ? (
                 <>
+                  <h2>{post.author}</h2>
                   <h1>{post.title}</h1>
                   <div className={classes.postImgContainer}>
                     <img
@@ -66,9 +69,9 @@ export const Post = () => {
               )}
               {checkForSelfText}
               <div className={classes.Comments}>
-                <h2>Comments</h2>
+                <h3>Comments</h3>
                 {comments.map((comment) => (
-                  <Comment comment={comment.data.body} />
+                  <Comment comment={comment.data} />
                 ))}
               </div>
             </div>
