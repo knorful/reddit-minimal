@@ -16,7 +16,7 @@ export const Posts = () => {
 
   return (
     <section className={classes.Posts}>
-      {posts.length === 0
+      {loading
         ? Array(25)
             .fill(0)
             .map((skeleton, key) => (
