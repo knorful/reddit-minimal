@@ -8,9 +8,9 @@ export const API = {
     return reddits;
   },
 
-  async loadPopularPosts() {
+  async loadPosts(reddit = "popular") {
     const popularPosts = await axios
-      .get("https://www.reddit.com/r/popular.json")
+      .get(`https://www.reddit.com/r/${reddit}.json`)
       .then((res) => res.data.data.children);
     return popularPosts;
   },
