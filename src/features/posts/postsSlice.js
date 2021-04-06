@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { API } from "../../util/API";
 
-export const loadPopularPosts = createAsyncThunk(
+export const loadPosts = createAsyncThunk(
   "posts/loadPopularPosts",
   async () => {
-    return API.loadPopularPosts();
+    return API.loadPosts();
   }
 );
 
@@ -17,16 +17,16 @@ export const postsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(loadPopularPosts.pending, (state, action) => {
+      .addCase(loadPosts.pending, (state, action) => {
         state.isLoadingPosts = true;
         state.hasError = false;
       })
-      .addCase(loadPopularPosts.fulfilled, (state, action) => {
+      .addCase(loadPosts.fulfilled, (state, action) => {
         state.posts = action.payload;
         state.isLoadingPosts = false;
         state.hasError = false;
       })
-      .addCase(loadPopularPosts.rejected, (state, action) => {
+      .addCase(loadPosts.rejected, (state, action) => {
         state.isLoadingPosts = false;
         state.hasError = true;
       });
