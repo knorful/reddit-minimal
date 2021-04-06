@@ -1,7 +1,33 @@
 .Comment {
   padding: 25px;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(243, 243, 243);
   margin: 15px 0;
   border: 1px solid rgb(175, 175, 175);
-  border-left: 3px solid rgb(104, 104, 104);
+  border-left: 3px solid #e03d02;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.author {
+  margin-right: 5px;
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+.timeCreated {
+  font-size: 0.8rem;
+  margin-top: 0;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.upvotes {
+  font-weight: 500;
+  margin-left: 5px;
 }
