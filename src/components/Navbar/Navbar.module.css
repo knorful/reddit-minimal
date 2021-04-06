@@ -1,10 +1,5 @@
 .Navbar {
   background-color: rgba(48, 48, 48, 1);
-  opacity: 1;
-  background-image: radial-gradient(#f8f8f8 0.45px, transparent 0.45px),
-    radial-gradient(#f8f8f8 0.45px, rgba(48, 48, 48, 1) 0.45px);
-  background-size: 18px 18px;
-  background-position: 0 0, 9px 9px;
 }
 
 .NavbarContent {
@@ -24,5 +19,14 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
   text-decoration: none;
+}
+
+.redditLogo {
+  border: 3px solid #ff4500;
+  border-radius: 100%;
+  margin-right: 5px;
+  background-color: white;
 }
