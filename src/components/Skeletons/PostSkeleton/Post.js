@@ -8,15 +8,22 @@ export const PostSkeleton = () => {
         style={{ marginLeft: "8px" }}
         animation="wave"
         variant="text"
-        width={765}
-        height={55}
+        width={250}
+        height={25}
       />
       <Skeleton
         style={{ marginLeft: "8px" }}
         animation="wave"
         variant="text"
         width={765}
-        height={55}
+        height={50}
+      />
+      <Skeleton
+        style={{ marginLeft: "8px" }}
+        animation="wave"
+        variant="text"
+        width={765}
+        height={50}
       />
       <Skeleton
         style={{ marginLeft: "8px" }}
