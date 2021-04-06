@@ -30,9 +30,9 @@ export const API = {
   },
 
   async aboutSubreddit(reddit) {
-    const about = await await axios
+    const about = await axios
       .get(`http://www.reddit.com/r/${reddit}/about.json`)
-      .then((res) => res.data);
+      .then((res) => res.data.data);
     return about;
   },
 };
