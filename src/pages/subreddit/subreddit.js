@@ -6,6 +6,9 @@ import {
   selectSubredditPosts,
   loadPostsBySubreddit,
   isLoadingSubredditPosts,
+  selectSubredditsAbouts,
+  loadAboutDetailsBySubreddit,
+  isLoadingSubredditAbouts,
 } from "../../features/subreddit/subredditSlice";
 import { PostListItem } from "../../components/PostListItem/PostListItem";
 import { Navbar } from "../../components/Navbar/Navbar";
@@ -17,16 +20,21 @@ export const Subreddit = () => {
   const dispatch = useDispatch();
   const subredditPosts = useSelector(selectSubredditPosts);
   const loadingSubredditPosts = useSelector(isLoadingSubredditPosts);
+  const subredditAbout = useSelector(selectSubredditsAbouts);
+  const loadingSubredditAbouts = useSelector(isLoadingSubredditAbouts);
+
   const { reddit } = useParams();
+
   const showSubredditsByName = subredditPosts.map((subredditPost) => (
     <PostListItem post={subredditPost} />
   ));
 
   useEffect(() => {
     dispatch(loadPostsBySubreddit(reddit));
+    dispatch(loadAboutDetailsBySubreddit(reddit));
   }, [dispatch, reddit]);
 
-  console.log(subredditPosts);
+  console.log("abouts", subredditAbout);
   return (
     <>
       <Navbar />
