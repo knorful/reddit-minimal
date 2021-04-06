@@ -1,5 +1,4 @@
 import axios from "axios";
-import { loadPost } from "../features/post/postSlice";
 
 export const API = {
   async loadSubreddits() {
