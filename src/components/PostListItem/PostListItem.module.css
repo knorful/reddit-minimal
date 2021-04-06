@@ -3,8 +3,8 @@
   padding: 25px;
   margin: 20px 0;
   background-color: white;
-  border-radius: 8px;
-  border: 2px solid #ff4552;
+  border-radius: 4px;
+  border: 1px solid #ff4552;
 }
 
 .PostListItem:hover {
