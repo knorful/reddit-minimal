@@ -72,7 +72,7 @@ export const PostListItem = ({ post }) => {
         >
           <h3>{postData.title}</h3>
         </Link>
-        {hasContentImg}
+        <div className={classes.contentImg}>{hasContentImg}</div>
       </div>
       <div className={classes.footer}>
         <div className={classes.ups}>

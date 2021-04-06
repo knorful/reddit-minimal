@@ -59,6 +59,10 @@
   transition: all 0.2s;
 }
 
+.contentImg {
+  margin-left: 10px;
+}
+
 .cardMedia {
   width: 250px;
   max-width: 320px;
