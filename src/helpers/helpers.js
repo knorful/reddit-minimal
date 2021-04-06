@@ -22,4 +22,18 @@ export const Helpers = {
     let convertedLink = url ? url.replace(regex, "&") : null;
     return convertedLink;
   },
+
+  getSelfText(post) {
+    return post.length !== 0 ? post.selftext : null;
+  },
+
+  getImage(post) {
+    if (post.length !== 0 && post.hasOwnProperty("preview")) {
+      return Helpers.ampersandConverter(post.preview.images[0].source.url);
+    }
+  },
+
+  getVideo(post) {
+    return post.is_video ? post.secure_media.reddit_video.fallback_url : null;
+  },
 };
