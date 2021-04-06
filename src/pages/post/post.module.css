@@ -1,0 +1,25 @@
+.PostContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.Post {
+  margin: 25px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.Post h1 {
+  padding-top: 25px;
+}
+
+.Post h1,
+.postImgContainer {
+  text-align: center;
+}
+
+.postImg {
+  max-width: 800px;
+  text-align: center;
+}
