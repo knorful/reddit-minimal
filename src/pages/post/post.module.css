@@ -4,10 +4,11 @@
 }
 
 .Post {
-  margin: 25px;
+  margin: 20px;
   background-color: white;
   border-radius: 8px;
   padding: 20px;
+  border: 2px solid #ff4500;
 }
 
 .Post h1 {
