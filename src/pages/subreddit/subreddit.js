@@ -5,21 +5,28 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   selectSubredditPosts,
   loadPostsBySubreddit,
+  isLoadingSubredditPosts,
 } from "../../features/subreddit/subredditSlice";
 import { PostListItem } from "../../components/PostListItem/PostListItem";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Subreddits } from "../../features/subreddits/Subreddits";
+import { PostListItemSkeleton } from "../../components/Skeletons/PostListItemSkeleton/PostListItem";
 import classes from "./subreddit.module.css";
 
 export const Subreddit = () => {
   const dispatch = useDispatch();
   const subredditPosts = useSelector(selectSubredditPosts);
+  const loadingSubredditPosts = useSelector(isLoadingSubredditPosts);
   const { reddit } = useParams();
+  const showSubredditsByName = subredditPosts.map((subredditPost) => (
+    <PostListItem post={subredditPost} />
+  ));
 
   useEffect(() => {
     dispatch(loadPostsBySubreddit(reddit));
   }, [dispatch, reddit]);
 
+  console.log(subredditPosts);
   return (
     <>
       <Navbar />
@@ -29,9 +36,15 @@ export const Subreddit = () => {
             <Subreddits />
           </aside>
           <div className={classes.post}>
-            {subredditPosts.map((subredditPost) => (
-              <PostListItem post={subredditPost} />
-            ))}
+            {loadingSubredditPosts
+              ? Array(8)
+                  .fill(0)
+                  .map((el) => (
+                    <div className={classes.skeleton}>
+                      <PostListItemSkeleton />
+                    </div>
+                  ))
+              : showSubredditsByName}
           </div>
         </main>
       </Container>
