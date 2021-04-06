@@ -18,6 +18,7 @@ import { Subreddits } from "../../features/subreddits/Subreddits";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { PostSkeleton } from "../../components/Skeletons/PostSkeleton/Post";
 import ReactMarkdown from "react-markdown";
+import { format } from "timeago.js";
 import classes from "./post.module.css";
 
 export const Post = () => {
@@ -40,7 +41,7 @@ export const Post = () => {
 
   let checkForSelfText =
     post.length !== 0 ? <ReactMarkdown source={post.selftext} /> : null;
-
+  console.log(post);
   return (
     <>
       <header>
@@ -54,8 +55,13 @@ export const Post = () => {
                 <PostSkeleton />
               ) : image ? (
                 <>
-                  <h2>{post.author}</h2>
-                  <h1>{post.title}</h1>
+                  <div className={classes.header}>
+                    <p className={classes.headerAuthor}>{post.author}</p>
+                    <p className={classes.headerTime}>
+                      {format(post.created_utc * 1000)}
+                    </p>
+                  </div>
+                  <h2>{post.title}</h2>
                   <div className={classes.postImgContainer}>
                     <img
                       className={classes.postImg}
@@ -70,9 +76,11 @@ export const Post = () => {
               {checkForSelfText}
               <div className={classes.Comments}>
                 <h3>Comments</h3>
-                {comments.map((comment) => (
-                  <Comment comment={comment.data} />
-                ))}
+                {!loadingComments
+                  ? comments.map((comment) => (
+                      <Comment comment={comment.data} />
+                    ))
+                  : null}
               </div>
             </div>
             <aside>

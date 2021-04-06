@@ -11,6 +11,21 @@
   border: 2px solid #ff4500;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.headerAuthor {
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.headerTime {
+  color: rgb(109, 109, 109);
+}
+
 .Post h1 {
   padding-top: 25px;
 }
