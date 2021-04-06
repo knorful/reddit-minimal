@@ -1,6 +1,10 @@
 .Navbar {
-  background-color: rgb(48, 48, 48);
-  box-shadow: 5px 5px 5px rgb(209, 209, 209);
+  background-color: rgba(48, 48, 48, 1);
+  opacity: 1;
+  background-image: radial-gradient(#f8f8f8 0.45px, transparent 0.45px),
+    radial-gradient(#f8f8f8 0.45px, rgba(48, 48, 48, 1) 0.45px);
+  background-size: 18px 18px;
+  background-position: 0 0, 9px 9px;
 }
 
 .NavbarContent {
