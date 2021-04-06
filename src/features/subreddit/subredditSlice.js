@@ -17,6 +17,7 @@ export const subredditSlice = createSlice({
     subredditPosts: [],
     loadingSubredditPosts: false,
     hasErrors: false,
+
     subredditAbout: [],
     loadingSubredditAbout: false,
     hasAboutErrors: false,
@@ -43,7 +44,7 @@ export const subredditSlice = createSlice({
         state.hasErrors = false;
       })
       .addCase(loadAboutDetailsBySubreddit.fulfilled, (state, action) => {
-        state.subredditPosts = action.payload;
+        state.subredditAbout = action.payload;
         state.loadingSubredditPosts = false;
         state.hasErrors = false;
       })
@@ -58,6 +59,7 @@ export default subredditSlice.reducer;
 export const selectSubredditPosts = (state) => state.subreddit.subredditPosts;
 export const isLoadingSubredditPosts = (state) =>
   state.subreddit.loadingSubredditPosts;
+
 export const selectSubredditsAbouts = (state) => state.subreddit.subredditAbout;
 export const isLoadingSubredditAbouts = (state) =>
   state.subreddit.loadingSubredditAbout;
