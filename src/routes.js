@@ -1,6 +1,6 @@
 import React from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
-import { Subreddit } from "./components/Subreddit/Subreddit";
+import { Subreddit } from "./pages/subreddit/subreddit";
 import { Home } from "./pages/home/home";
 import { Post } from "./pages/post/post";
 
