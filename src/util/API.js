@@ -28,4 +28,11 @@ export const API = {
       .then((res) => res.data[0].data.children[0].data);
     return post;
   },
+
+  async aboutSubreddit(reddit) {
+    const about = await await axios
+      .get(`http://www.reddit.com/r/${reddit}/about.json`)
+      .then((res) => res.data);
+    return about;
+  },
 };
