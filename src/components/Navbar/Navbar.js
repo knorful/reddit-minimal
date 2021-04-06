@@ -7,18 +7,20 @@ import classes from "./Navbar.module.css";
 
 export const Navbar = () => {
   return (
-    <div className={classes.Navbar}>
-      <Container>
-        <div className={classes.NavbarContent}>
-          <Link className={classes.logo} to="/">
-            <RedditIcon className={classes.redditLogo} />
-            <h2>
-              Reddit <span>Minimal</span>
-            </h2>
-          </Link>
-          <Searchbar />
-        </div>
-      </Container>
-    </div>
+    <header>
+      <div className={classes.Navbar}>
+        <Container>
+          <div className={classes.NavbarContent}>
+            <Link className={classes.logo} to="/">
+              <RedditIcon className={classes.redditLogo} />
+              <h2>
+                Reddit <span>Minimal</span>
+              </h2>
+            </Link>
+            <Searchbar />
+          </div>
+        </Container>
+      </div>
+    </header>
   );
 };
