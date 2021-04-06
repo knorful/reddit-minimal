@@ -116,9 +116,9 @@
 }
 
 .timeCreated {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  color: rgb(51, 51, 51);
 }
-
 @media only screen and (max-width: 502px) {
   .mainContent {
     flex-direction: column;
