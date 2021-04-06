@@ -16,7 +16,7 @@ export const subredditSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(loadPostsBySubreddit.pending, (state, action) => {
-        state.loadingSubredditPosts = false;
+        state.loadingSubredditPosts = true;
         state.hasErrors = false;
       })
       .addCase(loadPostsBySubreddit.fulfilled, (state, action) => {
@@ -26,7 +26,7 @@ export const subredditSlice = createSlice({
       })
       .addCase(loadPostsBySubreddit.rejected, (state, action) => {
         state.loadingSubredditPosts = false;
-        state.hasErrors = false;
+        state.hasErrors = true;
       });
   },
 });
