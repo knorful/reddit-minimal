@@ -34,6 +34,29 @@ export const Helpers = {
   },
 
   getVideo(post) {
-    return post.is_video ? post.secure_media.reddit_video.fallback_url : null;
+    //TODO: improve logic to check if post has reddit video in preview prop
+    // let hasPreviewProp = post.hasOwnProperty("preview");
+    // if (hasPreviewProp) {
+    //   if (post.preview.hasOwnProperty("reddit_video_preview")) {
+    //     return this.convertGifToMP4(
+    //       post.preview.reddit_video_preview.fallback_url
+    //       );
+    //     }
+    //   }
+    const regex = /(gifv)/gi;
+    if (post.is_video) {
+      return post.secure_media.reddit_video.fallback_url;
+    }
+    console.log("converting...", post);
+    if (post.length !== 0 && post.url.match(regex)) {
+      return this.convertGifToMP4(post.url);
+    }
+  },
+
+  convertGifToMP4(url) {
+    const regex = /(gifv)/gi;
+    let convertedLink = url.replace(regex, "mp4");
+    console.log("converted", convertedLink);
+    return convertedLink;
   },
 };
