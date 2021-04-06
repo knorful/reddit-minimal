@@ -47,7 +47,6 @@ export const Helpers = {
     if (post.is_video) {
       return post.secure_media.reddit_video.fallback_url;
     }
-    console.log("converting...", post);
     if (post.length !== 0 && post.url.match(regex)) {
       return this.convertGifToMP4(post.url);
     }
@@ -56,7 +55,6 @@ export const Helpers = {
   convertGifToMP4(url) {
     const regex = /(gifv)/gi;
     let convertedLink = url.replace(regex, "mp4");
-    console.log("converted", convertedLink);
     return convertedLink;
   },
 };
