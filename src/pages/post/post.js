@@ -48,18 +48,22 @@ export const Post = () => {
         <Container>
           <div className={classes.PostContainer}>
             <div className={classes.Post}>
-              <h1>{post.title}</h1>
               {loadingPost ? (
                 <PostSkeleton />
               ) : image ? (
-                <div className={classes.postImgContainer}>
-                  <img
-                    className={classes.postImg}
-                    src={image}
-                    alt={post.title}
-                  />
-                </div>
-              ) : null}
+                <>
+                  <h1>{post.title}</h1>
+                  <div className={classes.postImgContainer}>
+                    <img
+                      className={classes.postImg}
+                      src={image}
+                      alt={post.title}
+                    />
+                  </div>
+                </>
+              ) : (
+                <h1>{post.title}</h1>
+              )}
               {checkForSelfText}
               <div className={classes.Comments}>
                 <h2>Comments</h2>
