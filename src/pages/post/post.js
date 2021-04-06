@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Container } from "@material-ui/core";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   loadCommentsForPostId,
@@ -70,12 +70,15 @@ export const Post = () => {
                 <>
                   <div className={classes.header}>
                     <p className={classes.headerAuthor}>{post.author}</p>
+
                     <p className={classes.headerTime}>
                       {format(post.created_utc * 1000)}
                     </p>
-                    <p className={classes.headerTopic}>
-                      {post.subreddit_name_prefixed}
-                    </p>
+                    <Link to={`/subreddit/${post.subreddit}`}>
+                      <p className={classes.headerTopic}>
+                        {post.subreddit_name_prefixed}
+                      </p>
+                    </Link>
                   </div>
                   <div className={classes.title}>
                     <h2>{post.title}</h2>
