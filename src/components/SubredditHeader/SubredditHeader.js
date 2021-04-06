@@ -20,7 +20,12 @@ export const SubredditHeader = ({ img, backColor, title, icon, reddit }) => {
       <div className={classes.headerDivide}>
         <Container maxWidth="sm">
           <div className={classes.headerContent}>
-            <img className={classes.avatar} src={icon} alt={title} />
+            <Avatar
+              style={{ width: "100px", height: "100px" }}
+              className={classes.avatar}
+              src={icon}
+              alt={title}
+            />
             <div className={classes.reddit}>
               <p className={classes.title}>{title}</p>
               <p className={classes.redditTopic}>{`r/${reddit}`}</p>
