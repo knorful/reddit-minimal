@@ -7,6 +7,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { Helpers } from "../../helpers/helpers";
+import { format } from "timeago.js";
 import classes from "./PostListItem.module.css";
 
 export const PostListItem = ({ post }) => {
@@ -108,6 +109,9 @@ export const PostListItem = ({ post }) => {
               <p style={{ fontWeight: "500", fontSize: "1rem" }}>COMMENTS</p>
             </button>
           </Link>
+          <p className={classes.timeCreated}>
+            {format(postData.created_utc * 1000)} ago
+          </p>
         </div>
       </div>
     </div>
