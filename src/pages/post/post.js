@@ -38,16 +38,34 @@ export const Post = () => {
   let selfText = <ReactMarkdown source={Helpers.getSelfText(post)} />;
   let video = Helpers.getVideo(post);
 
-  console.log(post);
   return (
     <>
       <Navbar />
       <main>
         <Container>
+          {/* Post */}
           <div className={classes.PostContainer}>
             <div className={classes.Post}>
               {loadingPost ? (
                 <PostSkeleton />
+              ) : video ? (
+                <>
+                  <div className={classes.header}>
+                    <p className={classes.headerAuthor}>{post.author}</p>
+                    <p className={classes.headerTime}>
+                      {format(post.created_utc * 1000)}
+                    </p>
+                  </div>
+                  <div className={classes.title}>
+                    <h2>{post.title}</h2>
+                    <hr />
+                  </div>
+                  <div className={classes.video}>
+                    <video src={video} controls autoPlay>
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </>
               ) : image ? (
                 <>
                   <div className={classes.header}>
@@ -86,6 +104,8 @@ export const Post = () => {
                 </>
               )}
               <div className={classes.selfText}>{selfText}</div>
+
+              {/* Comments */}
               <div className={classes.Comments}>
                 <h3>Comments</h3>
                 {!loadingComments

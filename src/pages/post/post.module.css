@@ -32,6 +32,11 @@
   font-weight: 500;
 }
 
+.video {
+  text-align: center;
+  outline: none;
+}
+
 .Post h1 {
   padding-top: 25px;
 }
