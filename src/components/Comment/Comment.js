@@ -3,6 +3,7 @@ import classes from "./Comment.module.css";
 import { format } from "timeago.js";
 import { Helpers } from "../../helpers/helpers";
 import PublishIcon from "@material-ui/icons/Publish";
+import ReactMarkdown from "react-markdown";
 
 export const Comment = ({ comment }) => {
   const commentAuthor = comment.author;
@@ -15,7 +16,7 @@ export const Comment = ({ comment }) => {
         <p className={classes.author}>{commentAuthor}</p>
         <p className={classes.timeCreated}>{timeCreated}</p>
       </div>
-      <p>{comment.body}</p>
+      <ReactMarkdown source={comment.body}></ReactMarkdown>
       <div className={classes.footer}>
         <PublishIcon />
         <p className={classes.upvotes}>{Helpers.kFormatter(upvotes)} UPVOTES</p>
