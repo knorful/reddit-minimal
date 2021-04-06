@@ -9,7 +9,7 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { Helpers } from "../../helpers/helpers";
 import classes from "./PostListItem.module.css";
 
-export const PostListItem = ({ post, loading }) => {
+export const PostListItem = ({ post }) => {
   const postData = post ? post.data : null;
   const validLinkCheckForThumbnail = post
     ? Helpers.imageFile(postData.thumbnail)
