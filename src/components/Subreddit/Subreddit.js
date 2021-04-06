@@ -4,7 +4,6 @@ import { Helpers } from "../../helpers/helpers";
 import classes from "./Subreddit.module.css";
 
 export const Subreddit = ({ subreddit }) => {
-  console.log(subreddit);
   const subredditTopic = subreddit.data.display_name_prefixed;
   const hasIcon =
     subreddit.data.community_icon.length !== 0 || subreddit.data.icon_img;
@@ -17,6 +16,7 @@ export const Subreddit = ({ subreddit }) => {
   ) : (
     <Avatar>{subreddit.data.display_name_prefixed.substring(2, 3)}</Avatar>
   );
+
   return (
     <div className={classes.Subreddit}>
       {displayIcon}
