@@ -61,9 +61,11 @@ export const PostListItem = ({ post }) => {
       <div className={classes.header}>
         {hasThumbnail}
         <div className={classes.headerContent}>
-          <p className={classes.subredditName}>
-            {postData.subreddit_name_prefixed}
-          </p>
+          <Link to={`/subreddit/${postData.subreddit}`}>
+            <p className={classes.subredditName}>
+              {postData.subreddit_name_prefixed}
+            </p>
+          </Link>
           <p className={classes.author}>Posted by u/{postData.author}</p>
         </div>
       </div>
