@@ -25,6 +25,7 @@ figure {
   display: flex;
 }
 .avatar {
+  border-radius: 100%;
   width: 100px;
   height: 100px;
   margin-top: -30px;
