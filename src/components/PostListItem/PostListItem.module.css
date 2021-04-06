@@ -78,6 +78,7 @@
 
 .footer {
   display: flex;
+  align-items: center;
 }
 
 .ups {
@@ -112,6 +113,10 @@
   margin: 0px 5px;
   color: rgb(110, 110, 110);
   font-weight: 500;
+}
+
+.timeCreated {
+  font-size: 0.85rem;
 }
 
 @media only screen and (max-width: 502px) {
