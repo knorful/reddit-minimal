@@ -21,7 +21,7 @@ export const Subreddit = ({ subreddit }) => {
   );
 
   return (
-    <Link to="/subreddit/asdfasd">
+    <Link to={`/subreddit/${subreddit.data.display_name}`}>
       <div className={classes.Subreddit}>
         {displayIcon}
         <div className={classes.subInfo}>
