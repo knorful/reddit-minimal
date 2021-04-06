@@ -33,7 +33,7 @@
 }
 
 .postTitle {
-  max-width: 600px;
+  max-width: 500px;
   text-decoration: none;
   color: rgb(65, 64, 64);
 }
@@ -61,11 +61,13 @@
 
 .contentImg {
   margin-left: 10px;
+  max-width: 250px;
 }
 
 .cardMedia {
-  width: 250px;
+  width: 100%;
   max-width: 320px;
+  height: 100%;
 }
 
 .footer {

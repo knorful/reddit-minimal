@@ -11,6 +11,8 @@ import classes from "./PostListItem.module.css";
 
 export const PostListItem = ({ post }) => {
   const postData = post ? post.data : null;
+  const video = Helpers.getVideo(postData);
+
   const validLinkCheckForThumbnail = post
     ? Helpers.imageFile(postData.thumbnail)
     : null;
@@ -72,7 +74,22 @@ export const PostListItem = ({ post }) => {
         >
           <h3>{postData.title}</h3>
         </Link>
-        <div className={classes.contentImg}>{hasContentImg}</div>
+        {video ? (
+          <CardMedia
+            component="video"
+            type="video/mp4"
+            alt={postData.subreddit}
+            height="140"
+            className={classes.cardMedia}
+            src={video}
+            autoPlay
+            controls
+            loop
+            muted
+          ></CardMedia>
+        ) : hasContentImg ? (
+          <div className={classes.contentImg}>{hasContentImg}</div>
+        ) : null}
       </div>
       <div className={classes.footer}>
         <div className={classes.ups}>
