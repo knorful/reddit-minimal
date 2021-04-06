@@ -15,6 +15,7 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import { Subreddits } from "../../features/subreddits/Subreddits";
 import { PostListItemSkeleton } from "../../components/Skeletons/PostListItemSkeleton/PostListItem";
 import { SubredditHeader } from "../../components/SubredditHeader/SubredditHeader";
+import { Helpers } from "../../helpers/helpers";
 import classes from "./subreddit.module.css";
 
 export const Subreddit = () => {
@@ -26,7 +27,10 @@ export const Subreddit = () => {
 
   const { reddit } = useParams();
 
-  const headerImg = subredditAbout.header_img;
+  const bannerBackground = Helpers.ampersandConverter(
+    subredditAbout.banner_background_image
+  );
+  const headerImg = Helpers.ampersandConverter(subredditAbout.header_img);
   const backColor = subredditAbout.banner_background_color;
   const iconImg = subredditAbout.icon_img;
   const redditTitle = subredditAbout.title;
@@ -40,15 +44,15 @@ export const Subreddit = () => {
     dispatch(loadAboutDetailsBySubreddit(reddit));
   }, [dispatch, reddit]);
 
-  console.log("himg", subredditAbout);
   return (
     <>
       <Navbar />
       <SubredditHeader
         title={redditTitle}
         icon={iconImg}
-        img={headerImg}
+        img={bannerBackground || headerImg}
         backColor={backColor}
+        reddit={reddit}
       />
       <Container>
         <main className={classes.Subreddit}>
