@@ -36,7 +36,7 @@ export const Post = () => {
 
   let image = Helpers.getImage(post);
   let selfText = <ReactMarkdown source={Helpers.getSelfText(post)} />;
-  let video = Helpers.getVideo(post);
+  let video = !loadingPost && Helpers.getVideo(post);
 
   return (
     <>
@@ -61,9 +61,11 @@ export const Post = () => {
                     <hr />
                   </div>
                   <div className={classes.video}>
-                    <video src={video} controls autoPlay>
-                      Your browser does not support the video tag.
-                    </video>
+                    <Container maxWidth="sm">
+                      <video src={video} controls autoPlay>
+                        Your browser does not support the video tag.
+                      </video>
+                    </Container>
                   </div>
                 </>
               ) : image ? (
