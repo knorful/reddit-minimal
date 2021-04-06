@@ -9,10 +9,10 @@ export const API = {
   },
 
   async loadPosts(reddit = "popular") {
-    const popularPosts = await axios
+    const posts = await axios
       .get(`https://www.reddit.com/r/${reddit}.json`)
       .then((res) => res.data.data.children);
-    return popularPosts;
+    return posts;
   },
 
   async loadComments(reddit, id) {
