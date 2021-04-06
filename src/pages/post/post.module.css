@@ -25,6 +25,11 @@
 
 .headerTime {
   color: rgb(109, 109, 109);
+  margin-right: 10px;
+}
+
+.headerTopic {
+  font-weight: 500;
 }
 
 .Post h1 {

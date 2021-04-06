@@ -55,6 +55,9 @@ export const Post = () => {
                     <p className={classes.headerTime}>
                       {format(post.created_utc * 1000)}
                     </p>
+                    <p className={classes.headerTopic}>
+                      {post.subreddit_name_prefixed}
+                    </p>
                   </div>
                   <div className={classes.title}>
                     <h2>{post.title}</h2>
