@@ -6,9 +6,9 @@
 .Post {
   margin: 20px;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 20px;
-  border: 2px solid #ff4500;
+  border: 1px solid #ff4500;
 }
 
 .header {
@@ -38,4 +38,26 @@
 .postImg {
   max-width: 800px;
   text-align: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.title hr {
+  background-color: #ff4500;
+  height: 3px;
+  width: 80px;
+  margin-bottom: 40px;
+  border: none;
+}
+
+.selfText {
+  font-size: 1.2rem;
+  line-height: 30px;
+  padding: 0 25px;
+}
+
+.Comments h3 {
+  margin: 50px 0;
 }

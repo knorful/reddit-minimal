@@ -17,8 +17,8 @@ import { Helpers } from "../../helpers/helpers";
 import { Subreddits } from "../../features/subreddits/Subreddits";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { PostSkeleton } from "../../components/Skeletons/PostSkeleton/Post";
-import ReactMarkdown from "react-markdown";
 import { format } from "timeago.js";
+import ReactMarkdown from "react-markdown";
 import classes from "./post.module.css";
 
 export const Post = () => {
@@ -34,19 +34,14 @@ export const Post = () => {
     dispatch(loadCommentsForPostId({ reddit, id }));
   }, [dispatch, reddit, id]);
 
-  let image =
-    post.length !== 0 && post.hasOwnProperty("preview")
-      ? Helpers.ampersandConverter(post.preview.images[0].source.url)
-      : null;
+  let image = Helpers.getImage(post);
+  let selfText = <ReactMarkdown source={Helpers.getSelfText(post)} />;
+  let video = Helpers.getVideo(post);
 
-  let checkForSelfText =
-    post.length !== 0 ? <ReactMarkdown source={post.selftext} /> : null;
-  console.log(post);
+  console.log(video);
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
+      <Navbar />
       <main>
         <Container>
           <div className={classes.PostContainer}>
@@ -61,7 +56,10 @@ export const Post = () => {
                       {format(post.created_utc * 1000)}
                     </p>
                   </div>
-                  <h2>{post.title}</h2>
+                  <div className={classes.title}>
+                    <h2>{post.title}</h2>
+                    <hr />
+                  </div>
                   <div className={classes.postImgContainer}>
                     <img
                       className={classes.postImg}
@@ -71,9 +69,12 @@ export const Post = () => {
                   </div>
                 </>
               ) : (
-                <h1>{post.title}</h1>
+                <div className={classes.title}>
+                  <h2>{post.title}</h2>
+                  <hr />
+                </div>
               )}
-              {checkForSelfText}
+              <div className={classes.selfText}>{selfText}</div>
               <div className={classes.Comments}>
                 <h3>Comments</h3>
                 {!loadingComments
