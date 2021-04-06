@@ -38,7 +38,7 @@ export const Post = () => {
   let selfText = <ReactMarkdown source={Helpers.getSelfText(post)} />;
   let video = Helpers.getVideo(post);
 
-  console.log(video);
+  console.log(post);
   return (
     <>
       <Navbar />
@@ -69,10 +69,18 @@ export const Post = () => {
                   </div>
                 </>
               ) : (
-                <div className={classes.title}>
-                  <h2>{post.title}</h2>
-                  <hr />
-                </div>
+                <>
+                  <div className={classes.header}>
+                    <p className={classes.headerAuthor}>{post.author}</p>
+                    <p className={classes.headerTime}>
+                      {format(post.created_utc * 1000)}
+                    </p>
+                  </div>
+                  <div className={classes.title}>
+                    <h2>{post.title}</h2>
+                    <hr />
+                  </div>
+                </>
               )}
               <div className={classes.selfText}>{selfText}</div>
               <div className={classes.Comments}>
