@@ -14,6 +14,7 @@ import { PostListItem } from "../../components/PostListItem/PostListItem";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Subreddits } from "../../features/subreddits/Subreddits";
 import { PostListItemSkeleton } from "../../components/Skeletons/PostListItemSkeleton/PostListItem";
+import { SubredditHeader } from "../../components/SubredditHeader/SubredditHeader";
 import classes from "./subreddit.module.css";
 
 export const Subreddit = () => {
@@ -25,6 +26,11 @@ export const Subreddit = () => {
 
   const { reddit } = useParams();
 
+  const headerImg = subredditAbout.header_img;
+  const backColor = subredditAbout.banner_background_color;
+  const iconImg = subredditAbout.icon_img;
+  const redditTitle = subredditAbout.title;
+
   const showSubredditsByName = subredditPosts.map((subredditPost) => (
     <PostListItem post={subredditPost} />
   ));
@@ -34,10 +40,16 @@ export const Subreddit = () => {
     dispatch(loadAboutDetailsBySubreddit(reddit));
   }, [dispatch, reddit]);
 
-  console.log("abouts", subredditAbout);
+  console.log("himg", subredditAbout);
   return (
     <>
       <Navbar />
+      <SubredditHeader
+        title={redditTitle}
+        icon={iconImg}
+        img={headerImg}
+        backColor={backColor}
+      />
       <Container>
         <main className={classes.Subreddit}>
           <aside>
