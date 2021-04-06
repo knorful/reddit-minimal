@@ -1,5 +1,6 @@
 import React from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
+import { Subreddit } from "./components/Subreddit/Subreddit";
 import { Home } from "./pages/home/home";
 import { Post } from "./pages/post/post";
 
@@ -8,6 +9,11 @@ const appRoutes = [
     path: "/",
     page: Home,
   },
+  {
+    path: "/subreddit/:reddit",
+    page: Subreddit,
+  },
+
   {
     path: "/post/:reddit/comments/:id",
     page: Post,
