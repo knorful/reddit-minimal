@@ -61,11 +61,9 @@ export const Post = () => {
                     <hr />
                   </div>
                   <div className={classes.video}>
-                    <Container maxWidth="sm">
-                      <video src={video} controls autoPlay>
-                        Your browser does not support the video tag.
-                      </video>
-                    </Container>
+                    <video src={video} controls autoPlay>
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                 </>
               ) : image ? (

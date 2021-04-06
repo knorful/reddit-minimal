@@ -37,6 +37,10 @@
   outline: none;
 }
 
+.video video {
+  width: 100%;
+}
+
 .Post h1 {
   padding-top: 25px;
 }
