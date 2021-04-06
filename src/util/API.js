@@ -1,4 +1,5 @@
 import axios from "axios";
+import { loadPost } from "../features/post/postSlice";
 
 export const API = {
   async loadSubreddits() {
@@ -20,5 +21,12 @@ export const API = {
       .get(`http://www.reddit.com/r/${reddit}/comments/${id}.json`)
       .then((res) => res.data[1].data.children);
     return comments;
+  },
+
+  async loadPost(reddit, id) {
+    const post = await axios
+      .get(`http://www.reddit.com/r/${reddit}/${id}.json`)
+      .then((res) => res.data[0].data.children[0].data);
+    return post;
   },
 };
