@@ -7,7 +7,7 @@ export const SubredditHeader = ({ img, backColor, title, icon, reddit }) => {
   const headerStyles = {
     backgroundColor: chooseBackColor,
     background: `url(${img})`,
-    height: "350px",
+    height: "400px",
   };
   return (
     <div>

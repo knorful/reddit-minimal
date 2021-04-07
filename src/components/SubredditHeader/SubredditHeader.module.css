@@ -3,16 +3,23 @@ figure {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
+  filter: blur(2px) !important;
+  position: relative;
+  top: -10px;
+  left: -5px;
 }
 
 .noImg {
-  height: 200px;
+  height: 400px;
 }
 
 .headerDivide {
   display: flex;
+  position: relative;
+  z-index: 20;
   align-items: center;
   background-color: white;
+  margin-top: -13px;
 }
 
 .headerContent {
@@ -22,6 +29,7 @@ figure {
   border-radius: 100%;
   margin-top: -30px;
   margin-right: 15px;
+  border: 7px solid rgb(59, 59, 59);
 }
 
 .title {
