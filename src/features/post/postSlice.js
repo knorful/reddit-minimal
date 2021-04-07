@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { API } from "../../util/API";
 
-export const loadPost = createAsyncThunk("post/loadPost", ({ reddit, id }) =>
-  API.loadPost(reddit, id)
+export const loadPost = createAsyncThunk(
+  "post/loadPost",
+  async ({ reddit, id }) => await API.loadPost(reddit, id)
 );
 
 export const postSlice = createSlice({
@@ -19,9 +20,9 @@ export const postSlice = createSlice({
         state.hasErrors = false;
       })
       .addCase(loadPost.fulfilled, (state, action) => {
-        state.post = action.payload;
         state.loadingPost = false;
         state.hasErrors = false;
+        state.post = action.payload;
       })
       .addCase(loadPost.rejected, (state, action) => {
         state.loadingPost = false;

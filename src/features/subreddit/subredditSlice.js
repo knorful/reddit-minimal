@@ -29,9 +29,9 @@ export const subredditSlice = createSlice({
         state.hasErrors = false;
       })
       .addCase(loadPostsBySubreddit.fulfilled, (state, action) => {
-        state.subredditPosts = action.payload;
         state.loadingSubredditPosts = false;
         state.hasErrors = false;
+        state.subredditPosts = action.payload;
       })
       .addCase(loadPostsBySubreddit.rejected, (state, action) => {
         state.loadingSubredditPosts = false;

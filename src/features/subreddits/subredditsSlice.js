@@ -12,7 +12,7 @@ export const subredditsSlice = createSlice({
   name: "subreddits",
   initialState: {
     subreddits: [],
-    loadingSubreddits: true,
+    loadingSubreddits: false,
     hasErrors: false,
   },
   extraReducers: (builder) => {

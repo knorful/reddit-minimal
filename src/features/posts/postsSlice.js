@@ -4,7 +4,7 @@ import { API } from "../../util/API";
 export const loadPosts = createAsyncThunk(
   "posts/loadPopularPosts",
   async () => {
-    return API.loadPosts();
+    return await API.loadPosts();
   }
 );
 
@@ -22,9 +22,9 @@ export const postsSlice = createSlice({
         state.hasError = false;
       })
       .addCase(loadPosts.fulfilled, (state, action) => {
-        state.posts = action.payload;
         state.isLoadingPosts = false;
         state.hasError = false;
+        state.posts = action.payload;
       })
       .addCase(loadPosts.rejected, (state, action) => {
         state.isLoadingPosts = false;
