@@ -44,9 +44,10 @@ export const API = {
   },
 
   async getUserAboutData(user) {
-    const userData = await axios
+    const aboutData = await axios
       .get(`http://www.reddit.com/user/${user}/about.json`)
-      .then((res) => res.data.data.children);
-    return userData;
+      .then((res) => res.data.data);
+
+    return aboutData;
   },
 };
