@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { loadUserData, selectUserData } from "../../features/user/userSlice";
+import { PostListItem } from "../../components/PostListItem/PostListItem";
 
 export const User = () => {
   const { user } = useParams();
@@ -12,11 +13,17 @@ export const User = () => {
     dispatch(loadUserData(user));
   }, [dispatch, user]);
 
-  console.log("user data", selectedUserData);
+  const approvedUserData = selectedUserData.filter(
+    (post) => post.data.thumbnail
+  );
 
   return (
     <div>
-      <h1>User Page</h1>
+      {approvedUserData ? (
+        approvedUserData.map((userData) => <PostListItem post={userData} />)
+      ) : (
+        <h1>Not yet!!</h1>
+      )}
     </div>
   );
 };
