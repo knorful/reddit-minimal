@@ -1,12 +1,11 @@
 figure {
   margin: 0;
   background-position: center !important;
-  /* background-repeat: no-repeat !important; */
-  /* background-size: cover !important; */
   background-origin: content-box !important;
   position: relative;
   top: -10px;
   left: -5px;
+  background-color: #ff4500 !important;
 }
 
 .headerDivide {
