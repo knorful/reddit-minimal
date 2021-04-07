@@ -34,9 +34,10 @@ export const Post = () => {
     dispatch(loadCommentsForPostId({ reddit, id }));
   }, [dispatch, reddit, id]);
 
-  let image = Helpers.getImage(post);
-  let selfText = <ReactMarkdown source={Helpers.getSelfText(post)} />;
-  let video = !loadingPost && Helpers.getVideo(post);
+  const image = Helpers.getImage(post);
+  const selfText = <ReactMarkdown source={Helpers.getSelfText(post)} />;
+  const video = !loadingPost && Helpers.getVideo(post);
+  const url = post.url;
 
   return (
     <>
@@ -57,7 +58,7 @@ export const Post = () => {
                     </p>
                   </div>
                   <div className={classes.title}>
-                    <h2>{post.title}</h2>
+                    <h2>{Helpers.ampersandConverter(post.title)}</h2>
                     <hr />
                   </div>
                   <div className={classes.video}>
@@ -81,7 +82,7 @@ export const Post = () => {
                     </Link>
                   </div>
                   <div className={classes.title}>
-                    <h2>{post.title}</h2>
+                    <h2>{Helpers.ampersandConverter(post.title)}</h2>
                     <hr />
                   </div>
                   <div className={classes.postImgContainer}>
@@ -91,6 +92,9 @@ export const Post = () => {
                       alt={post.title}
                     />
                   </div>
+                  <a href={url} target="_blank" rel="noreferrer">
+                    Click here to follow link
+                  </a>
                 </>
               ) : (
                 <>
@@ -104,6 +108,9 @@ export const Post = () => {
                     <h2>{post.title}</h2>
                     <hr />
                   </div>
+                  <a href={url} target="_blank" rel="noreferrer">
+                    Click here to follow link
+                  </a>
                 </>
               )}
               <div className={classes.selfText}>{selfText}</div>
