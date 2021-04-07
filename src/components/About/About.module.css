@@ -24,11 +24,35 @@
 }
 
 .profilePic {
-  margin: -40px 0 40px 10px;
+  margin: -40px 0 0 10px;
   height: 100px;
   border: 6px solid white;
   border-radius: 4px;
   position: relative;
   z-index: 4;
   background-color: white;
+}
+
+.info {
+  padding: 0 20px;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.additionalInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.karma,
+.cake_day {
+  color: rgb(75, 75, 75);
+}
+
+.karma p,
+.cake_day p {
+  color: rgb(119, 119, 119);
 }
