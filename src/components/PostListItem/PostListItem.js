@@ -13,6 +13,7 @@ import classes from "./PostListItem.module.css";
 
 export const PostListItem = ({ post }) => {
   const postData = post ? post.data : null;
+  console.log("postlistitem", postData);
   const video = Helpers.getVideo(postData);
   const voteCount = Helpers.kFormatter(postData.ups);
   const author = postData.author;
