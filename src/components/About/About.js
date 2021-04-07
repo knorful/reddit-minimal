@@ -26,6 +26,8 @@ export const About = ({ name, cake_day, karma, userImg, bannerImg, title }) => {
           alt={`${name} profile pic`}
         />
       </div>
+      <p className={classes.aboutHeader}>About ${name}</p>
+      <hr />
       <div className={classes.info}>
         <p className={classes.name}>{name}</p>
         <p>{title}</p>

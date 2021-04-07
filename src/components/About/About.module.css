@@ -33,8 +33,20 @@
   background-color: white;
 }
 
-.info {
+.aboutHeader {
   padding: 0 20px;
+  font-size: 1.2rem;
+}
+
+hr {
+  height: 3px;
+  background-color: rgb(70, 70, 70);
+  width: 90%;
+}
+
+.info {
+  padding: 0 40px;
+  text-align: center;
 }
 
 .name {
@@ -52,7 +64,10 @@
   color: rgb(75, 75, 75);
 }
 
-.karma p,
-.cake_day p {
+h3 {
+  margin-bottom: 5px;
+}
+p {
   color: rgb(119, 119, 119);
+  margin: 8px 0;
 }
