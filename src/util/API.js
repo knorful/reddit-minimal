@@ -39,8 +39,8 @@ export const API = {
   async getUserData(user) {
     const userData = await axios
       .get(`http://www.reddit.com/user/${user}.json`)
-      .then((res) => res.data.children);
-
+      .then((res) => res.data.data.children);
+    console.log("api", userData);
     return userData;
   },
 };
