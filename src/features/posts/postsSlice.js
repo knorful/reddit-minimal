@@ -1,12 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { API } from "../../util/API";
 
-export const loadPosts = createAsyncThunk(
-  "posts/loadPopularPosts",
-  async () => {
-    return await API.loadPosts();
-  }
-);
+export const loadPosts = createAsyncThunk("posts/loadPosts", async () => {
+  return await API.loadPosts();
+});
 
 export const postsSlice = createSlice({
   name: "posts",
