@@ -5,6 +5,10 @@ export const loadUserData = createAsyncThunk("user/loadUserData", (user) =>
   API.getUserData(user)
 );
 
+export const loadAboutData = createAsyncThunk("user/loadAboutData", (user) =>
+  API.getUserAboutData(user)
+);
+
 export const userSlice = createSlice({
   name: "user",
   initialState: {
