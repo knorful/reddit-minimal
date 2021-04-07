@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectSubreddits, loadSubreddits } from "./subredditsSlice";
 import { Subreddit } from "../../components/Subreddit/Subreddit";
 import { SubredditSkeleton } from "../../components/Skeletons/SubredditSkeleton/Subreddit";
+import { Button } from "@material-ui/core";
 import classes from "./Subreddits.module.css";
 
 export const Subreddits = () => {
@@ -34,9 +35,9 @@ export const Subreddits = () => {
             .fill(0)
             .map((el, i) => <SubredditSkeleton key={i} />)
         : showAllSubreddits}
-      <button className={classes.expandBtn} onClick={handleClick}>
+      <Button onClick={handleClick} variant="outlined" color="secondary">
         All Subreddits
-      </button>
+      </Button>
     </div>
   );
 };
