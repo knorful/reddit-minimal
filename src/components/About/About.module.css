@@ -35,7 +35,8 @@
 
 .aboutHeader {
   padding: 0 20px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 hr {
@@ -45,18 +46,19 @@ hr {
 }
 
 .info {
-  padding: 0 40px;
+  /* padding: 0 40px; */
   text-align: center;
 }
 
-.name {
-  font-size: 1.2rem;
+/* .name {
+  font-size: 1.5rem;
   font-weight: 500;
-}
+} */
 
 .additionalInfo {
   display: flex;
   justify-content: space-between;
+  padding: 0 40px;
 }
 
 .karma,
