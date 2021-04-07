@@ -15,6 +15,7 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import { Subreddits } from "../../features/subreddits/Subreddits";
 import { PostListItemSkeleton } from "../../components/Skeletons/PostListItemSkeleton/PostListItem";
 import { SubredditHeader } from "../../components/SubredditHeader/SubredditHeader";
+import { About } from "../../components/About/About";
 import { Helpers } from "../../helpers/helpers";
 import classes from "./subreddit.module.css";
 
@@ -27,28 +28,32 @@ export const Subreddit = () => {
 
   const { reddit } = useParams();
 
-  console.log("subreddit about", subredditAbout);
+  useEffect(() => {
+    dispatch(loadPostsBySubreddit(reddit));
+    dispatch(loadAboutDetailsBySubreddit(reddit));
+  }, [dispatch, reddit]);
 
   const bannerBackground = Helpers.ampersandConverter(
     subredditAbout.banner_img
       ? subredditAbout.banner_img
       : subredditAbout.banner_background_image
   );
+
   const headerImg = Helpers.ampersandConverter(subredditAbout.header_img);
   const backColor = subredditAbout.key_color;
   const iconImg = subredditAbout.icon_img;
   const redditTitle = subredditAbout.title;
-  const description = subredditAbout.description;
+
+  //get info to pass to About component
+  const name = subredditAbout.display_name_prefixed;
+  const description = subredditAbout.public_description;
   const activeCount = subredditAbout.accounts_active;
+  const createdDate = subredditAbout.created_utc;
+  const subCount = subredditAbout.subscribers;
 
   const showSubredditsByName = subredditPosts.map((subredditPost) => (
     <PostListItem post={subredditPost} />
   ));
-
-  useEffect(() => {
-    dispatch(loadPostsBySubreddit(reddit));
-    dispatch(loadAboutDetailsBySubreddit(reddit));
-  }, [dispatch, reddit]);
 
   return (
     <>
@@ -63,6 +68,13 @@ export const Subreddit = () => {
       <Container>
         <main className={classes.Subreddit}>
           <aside>
+            <About
+              name={name}
+              title={description}
+              created={createdDate}
+              subCount={subCount}
+              active={activeCount}
+            />
             <Subreddits />
           </aside>
           <div className={classes.post}>
