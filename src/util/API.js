@@ -35,4 +35,12 @@ export const API = {
       .then((res) => res.data.data);
     return about;
   },
+
+  async getUserData(user) {
+    const userData = await axios
+      .get(`http://www.reddit.com/user/${user}.json`)
+      .then((res) => res.data.children);
+
+    return userData;
+  },
 };
