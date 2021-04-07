@@ -23,7 +23,6 @@ export const User = () => {
 
   useEffect(() => {
     dispatch(loadUserData(user));
-    console.log("dispatch user", user);
     dispatch(loadAboutData(user));
   }, [dispatch, user]);
 
@@ -39,6 +38,9 @@ export const User = () => {
   const bannerImg = selectedAboutData.subreddit
     ? Helpers.ampersandConverter(selectedAboutData.subreddit.banner_img)
     : null;
+  const userTitle = selectedAboutData.subreddit
+    ? selectedAboutData.subreddit.title
+    : null;
 
   return (
     <div>
@@ -52,17 +54,14 @@ export const User = () => {
               karma={karma}
               userImg={userImg}
               bannerImg={bannerImg}
+              title={userTitle}
             />
             <Subreddits />
           </aside>
           <section>
-            {approvedUserData ? (
-              approvedUserData.map((userData, key) => (
-                <PostListItem key={key} post={userData} />
-              ))
-            ) : (
-              <h1>Not yet!!</h1>
-            )}
+            {approvedUserData.map((userData, key) => (
+              <PostListItem key={key} post={userData} />
+            ))}
           </section>
         </main>
       </Container>
