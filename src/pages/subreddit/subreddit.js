@@ -27,13 +27,19 @@ export const Subreddit = () => {
 
   const { reddit } = useParams();
 
+  console.log("subreddit about", subredditAbout);
+
   const bannerBackground = Helpers.ampersandConverter(
-    subredditAbout.banner_background_image
+    subredditAbout.banner_img
+      ? subredditAbout.banner_img
+      : subredditAbout.banner_background_image
   );
   const headerImg = Helpers.ampersandConverter(subredditAbout.header_img);
-  const backColor = subredditAbout.banner_background_color;
+  const backColor = subredditAbout.key_color;
   const iconImg = subredditAbout.icon_img;
   const redditTitle = subredditAbout.title;
+  const description = subredditAbout.description;
+  const activeCount = subredditAbout.accounts_active;
 
   const showSubredditsByName = subredditPosts.map((subredditPost) => (
     <PostListItem post={subredditPost} />
