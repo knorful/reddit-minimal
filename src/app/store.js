@@ -4,6 +4,7 @@ import { postsSlice } from "../features/posts/postsSlice";
 import { subredditsSlice } from "../features/subreddits/subredditsSlice";
 import { postSlice } from "../features/post/postSlice";
 import { subredditSlice } from "../features/subreddit/subredditSlice";
+import { userSlice } from "../features/user/userSlice";
 
 export default configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export default configureStore({
     subreddits: subredditsSlice.reducer,
     subreddit: subredditSlice.reducer,
     comments: commentsSlice.reducer,
+    user: userSlice.reducer,
   },
 });
