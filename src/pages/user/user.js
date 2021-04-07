@@ -6,6 +6,7 @@ import { PostListItem } from "../../components/PostListItem/PostListItem";
 import { Subreddits } from "../../features/subreddits/Subreddits";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Container } from "@material-ui/core";
+import { About } from "../../components/About/About";
 import classes from "./user.module.css";
 
 export const User = () => {
@@ -21,18 +22,21 @@ export const User = () => {
     (post) => post.data.thumbnail
   );
 
+  console.log("user", selectedUserData);
+
   return (
     <div>
       <Navbar />
       <Container>
         <main className={classes.User}>
           <aside>
+            <About />
             <Subreddits />
           </aside>
           <section>
             {approvedUserData ? (
-              approvedUserData.map((userData) => (
-                <PostListItem post={userData} />
+              approvedUserData.map((userData, key) => (
+                <PostListItem key={key} post={userData} />
               ))
             ) : (
               <h1>Not yet!!</h1>
