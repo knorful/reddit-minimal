@@ -44,8 +44,6 @@ export const Subreddit = () => {
     dispatch(loadAboutDetailsBySubreddit(reddit));
   }, [dispatch, reddit]);
 
-  console.log(subredditPosts);
-
   return (
     <>
       <Navbar />
