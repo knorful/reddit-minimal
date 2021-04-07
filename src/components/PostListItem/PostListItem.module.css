@@ -87,6 +87,9 @@
   margin-right: 15px;
 }
 
+.wrapper {
+  max-width: 500px;
+}
 .comment {
   display: flex;
   align-items: center;

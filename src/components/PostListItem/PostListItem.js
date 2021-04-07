@@ -8,6 +8,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { Helpers } from "../../helpers/helpers";
 import { format } from "timeago.js";
+import ReactMarkdown from "react-markdown";
 import classes from "./PostListItem.module.css";
 
 export const PostListItem = ({ post }) => {
@@ -56,7 +57,7 @@ export const PostListItem = ({ post }) => {
     ) : null
   ) : null;
   const voteCount = Helpers.kFormatter(postData.ups);
-
+  const selfText = <ReactMarkdown source={Helpers.getSelfText(postData)} />;
   return (
     <div className={classes.PostListItem}>
       <div className={classes.header}>
@@ -71,12 +72,15 @@ export const PostListItem = ({ post }) => {
         </div>
       </div>
       <div className={classes.mainContent}>
-        <Link
-          className={classes.postTitle}
-          to={`/post/${postData.subreddit}/comments/${postData.id}`}
-        >
-          <h3>{postData.title}</h3>
-        </Link>
+        <div className={classes.wrapper}>
+          <Link
+            className={classes.postTitle}
+            to={`/post/${postData.subreddit}/comments/${postData.id}`}
+          >
+            <h3>{postData.title}</h3>
+          </Link>
+          {selfText}
+        </div>
         {video ? (
           <CardMedia
             component="video"
@@ -110,7 +114,7 @@ export const PostListItem = ({ post }) => {
             </button>
           </Link>
           <p className={classes.timeCreated}>
-            {format(postData.created_utc * 1000)} ago
+            {format(postData.created_utc * 1000)}
           </p>
         </div>
       </div>
