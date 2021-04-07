@@ -14,6 +14,8 @@ import classes from "./PostListItem.module.css";
 export const PostListItem = ({ post }) => {
   const postData = post ? post.data : null;
   const video = Helpers.getVideo(postData);
+  const voteCount = Helpers.kFormatter(postData.ups);
+  const selfText = <ReactMarkdown source={Helpers.getSelfText(postData)} />;
 
   const validLinkCheckForThumbnail = post
     ? Helpers.imageFile(postData.thumbnail)
@@ -56,8 +58,7 @@ export const PostListItem = ({ post }) => {
       </a>
     ) : null
   ) : null;
-  const voteCount = Helpers.kFormatter(postData.ups);
-  const selfText = <ReactMarkdown source={Helpers.getSelfText(postData)} />;
+
   return (
     <div className={classes.PostListItem}>
       <div className={classes.header}>
