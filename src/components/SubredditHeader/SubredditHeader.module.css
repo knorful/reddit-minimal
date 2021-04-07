@@ -9,10 +9,6 @@ figure {
   left: -5px;
 }
 
-.noImg {
-  height: 400px;
-}
-
 .headerDivide {
   display: flex;
   position: relative;

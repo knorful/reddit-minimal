@@ -3,7 +3,7 @@ import { Avatar, Container } from "@material-ui/core";
 import classes from "./SubredditHeader.module.css";
 
 export const SubredditHeader = ({ img, backColor, title, icon, reddit }) => {
-  const chooseBackColor = backColor ? `${backColor}` : "rgb(65, 64, 64)";
+  const chooseBackColor = backColor ? `${backColor}` : "rgb(140, 140, 140)";
   const headerStyles = {
     background: `url(${img})`,
     height: "125px",
@@ -11,9 +11,7 @@ export const SubredditHeader = ({ img, backColor, title, icon, reddit }) => {
 
   return (
     <div>
-      <figure className={classes.imgContainer} style={headerStyles}>
-        {!img ? <div className={classes.noImg}></div> : null}
-      </figure>
+      <figure style={headerStyles}></figure>
       <div className={classes.headerDivide}>
         <Container maxWidth="sm">
           <div className={classes.headerContent}>
