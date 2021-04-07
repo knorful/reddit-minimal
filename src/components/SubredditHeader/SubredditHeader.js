@@ -5,10 +5,10 @@ import classes from "./SubredditHeader.module.css";
 export const SubredditHeader = ({ img, backColor, title, icon, reddit }) => {
   const chooseBackColor = backColor ? `${backColor}` : "rgb(65, 64, 64)";
   const headerStyles = {
-    backgroundColor: chooseBackColor,
     background: `url(${img})`,
-    height: "400px",
+    height: "125px",
   };
+
   return (
     <div>
       <figure className={classes.imgContainer} style={headerStyles}>
@@ -18,7 +18,11 @@ export const SubredditHeader = ({ img, backColor, title, icon, reddit }) => {
         <Container maxWidth="sm">
           <div className={classes.headerContent}>
             <Avatar
-              style={{ width: "100px", height: "100px" }}
+              style={{
+                width: "100px",
+                height: "100px",
+                borderColor: `${chooseBackColor}`,
+              }}
               className={classes.avatar}
               src={icon}
               alt={title}
