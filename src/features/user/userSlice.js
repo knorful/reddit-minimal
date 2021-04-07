@@ -19,6 +19,7 @@ export const userSlice = createSlice({
         state.hasErrors = false;
       })
       .addCase(loadUserData.fulfilled, (state, action) => {
+        state.userData = action.payload;
         state.loadingUserData = false;
         state.hasErrors = false;
       })
