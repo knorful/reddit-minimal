@@ -19,7 +19,7 @@ export const Subreddits = () => {
   const showAllSubreddits = !showAll
     ? subreddits
         .slice(0, itemsShown - 1)
-        .map((subreddit) => <Subreddit subreddit={subreddit} />)
+        .map((subreddit, i) => <Subreddit key={i} subreddit={subreddit} />)
     : subreddits.map((subreddit) => <Subreddit subreddit={subreddit} />);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export const Subreddits = () => {
       {subreddits.length === 0
         ? Array(8)
             .fill(0)
-            .map((el) => <SubredditSkeleton />)
+            .map((el, i) => <SubredditSkeleton key={i} />)
         : showAllSubreddits}
       <button className={classes.expandBtn} onClick={handleClick}>
         All Subreddits
