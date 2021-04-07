@@ -1,5 +1,7 @@
 .Navbar {
   background-color: rgba(48, 48, 48, 1);
+  position: relative;
+  z-index: 100;
 }
 
 .NavbarContent {
