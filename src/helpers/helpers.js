@@ -57,4 +57,27 @@ export const Helpers = {
     let convertedLink = url.replace(regex, "mp4");
     return convertedLink;
   },
+
+  getDate(utc) {
+    let months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "November",
+      "December",
+    ];
+    let d = new Date(0);
+    d.setUTCSeconds(utc);
+    let year = d.getFullYear();
+    let day = d.getDate();
+    let month = months[d.getMonth()];
+
+    return { year, day, month };
+  },
 };
