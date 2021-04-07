@@ -15,6 +15,7 @@ export const PostListItem = ({ post }) => {
   const postData = post ? post.data : null;
   const video = Helpers.getVideo(postData);
   const voteCount = Helpers.kFormatter(postData.ups);
+  const author = postData.author;
   const selfText = <ReactMarkdown source={Helpers.getSelfText(postData)} />;
 
   const validLinkCheckForThumbnail = post
@@ -69,7 +70,9 @@ export const PostListItem = ({ post }) => {
               {postData.subreddit_name_prefixed}
             </p>
           </Link>
-          <p className={classes.author}>Posted by u/{postData.author}</p>
+          <Link to={`/user/${author}`}>
+            <p className={classes.author}>Posted by u/{author}</p>
+          </Link>
         </div>
       </div>
       <div className={classes.mainContent}>

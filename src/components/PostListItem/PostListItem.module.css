@@ -34,7 +34,11 @@
   color: #e9404c;
 }
 
-.subredditName:hover {
+.author {
+  color: rgb(94, 94, 94);
+}
+.subredditName:hover,
+.author:hover {
   text-decoration: underline;
 }
 
