@@ -15,6 +15,10 @@ export const userSlice = createSlice({
     userData: [],
     loadingUserData: false,
     hasErrors: false,
+
+    userAboutData: [],
+    loadingAboutData: false,
+    hasErrorsAbout: false,
   },
   extraReducers: (builder) => {
     builder
@@ -30,6 +34,21 @@ export const userSlice = createSlice({
       .addCase(loadUserData.rejected, (state, action) => {
         state.loadingUserData = false;
         state.hasErrors = true;
+      })
+
+      // load about data
+      .addCase(loadAboutData.pending, (state, action) => {
+        state.loadingUserData = true;
+        state.hasErrors = false;
+      })
+      .addCase(loadAboutData.fulfilled, (state, action) => {
+        state.userAboutData = action.payload;
+        state.loadingUserData = false;
+        state.hasErrors = false;
+      })
+      .addCase(loadAboutData.rejected, (state, action) => {
+        state.loadingUserData = false;
+        state.hasErrors = true;
       });
   },
 });
@@ -37,3 +56,6 @@ export const userSlice = createSlice({
 export default userSlice.reducer;
 export const selectUserData = (state) => state.user.userData;
 export const isLoadingUserData = (state) => state.user.loadUserData;
+
+export const selectAboutData = (state) => state.user.userAboutData;
+export const isLoadingAboutData = (state) => state.user.loadingAboutData;
