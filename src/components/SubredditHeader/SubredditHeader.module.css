@@ -1,14 +1,8 @@
-.imgContainer {
-  text-align: center;
-  margin-bottom: 0;
-}
-
-img {
-  max-width: 100%;
-}
-
 figure {
   margin: 0;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 .noImg {
