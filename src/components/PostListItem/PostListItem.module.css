@@ -90,7 +90,7 @@
 }
 
 .wrapper {
-  max-width: 500px;
+  max-width: 100%;
 }
 .comment {
   display: flex;
@@ -155,18 +155,20 @@
   }
 }
 
-@media only screen and (max-width: 281px) {
+@media only screen and (max-width: 375px) {
+  .footer {
+    margin: 0;
+    width: 100%;
+  }
+
+  .ups {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 361px) {
   .author,
   .subredditName {
     font-size: 0.6rem;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    margin: 20px;
-  }
-
-  .commentBtn p {
-    font-size: 0.7rem !important;
   }
 }
