@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Avatar } from "@material-ui/core";
 import CommentIcon from "@material-ui/icons/Comment";
@@ -6,17 +6,23 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import Button from "@material-ui/core/Button";
 import { Helpers } from "../../helpers/helpers";
 import { format } from "timeago.js";
 import ReactMarkdown from "react-markdown";
 import classes from "./PostListItem.module.css";
 
 export const PostListItem = ({ post }) => {
+  const [show, setShow] = useState(false);
   const postData = post ? post.data : null;
   const video = Helpers.getVideo(postData);
   const voteCount = Helpers.kFormatter(postData.ups);
   const author = postData.author;
-  const selfText = <ReactMarkdown source={Helpers.getSelfText(postData)} />;
+  const selfText = show ? (
+    <ReactMarkdown source={Helpers.getSelfText(postData)} />
+  ) : (
+    <ReactMarkdown source={Helpers.getSelfText(postData).substring(0, 300)} />
+  );
 
   const validLinkCheckForThumbnail = post
     ? Helpers.imageFile(postData.thumbnail)
@@ -84,6 +90,29 @@ export const PostListItem = ({ post }) => {
             <h3>{Helpers.ampersandConverter(postData.title)}</h3>
           </Link>
           {selfText}
+          <div className={classes.Btn}>
+            {postData.selftext.length ? (
+              show ? (
+                <Button
+                  className={classes.showBtn}
+                  onClick={() => setShow(false)}
+                  variant="contained"
+                  color="primary"
+                >
+                  Close X
+                </Button>
+              ) : (
+                <Button
+                  className={classes.showBtn}
+                  onClick={() => setShow(true)}
+                  variant="contained"
+                  color="primary"
+                >
+                  See Full Post
+                </Button>
+              )
+            ) : null}
+          </div>
         </div>
         {video ? (
           <CardMedia

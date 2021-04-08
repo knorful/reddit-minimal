@@ -97,6 +97,11 @@
   align-items: center;
 }
 
+.Btn {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .commentBtn {
   text-decoration: none;
 }
