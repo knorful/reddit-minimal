@@ -42,7 +42,6 @@ export const About = ({
       <p className={classes.aboutHeader}>About {name}</p>
       <hr />
       <div className={classes.info}>
-        {/* <p className={classes.name}>{name}</p> */}
         <p>{title}</p>
         <div className={classes.additionalInfo}>
           {karma && cake_day ? (
@@ -66,10 +65,6 @@ export const About = ({
                 <h3>Online</h3>
                 <p>{Helpers.kFormatter(active)}</p>
               </div>
-              {/* <div className={classes.cake_day}>
-                <h3>Cake Day</h3>
-                <p>{`${creationDay.month} ${creationDay.day}, ${creationDay.year}`}</p>
-              </div> */}
             </>
           )}
         </div>
