@@ -16,9 +16,25 @@
   margin-top: 10px;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 541px) {
+  .paragraphSkeleton {
+    max-width: 380px;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .paragraphSkeleton {
+    max-width: 210px;
+  }
+
+  .footerSkeleton {
+    max-width: 190px;
+  }
+}
+
+@media only screen and (max-width: 281px) {
   .paragraphSkeleton,
   .footerSkeleton {
-    max-width: 170px;
+    max-width: 150px;
   }
 }
