@@ -23,9 +23,9 @@ export const PostListItem = ({ post }) => {
     ? Helpers.getSelfText(postData)
     : Helpers.getSelfText(postData).substring(0, 200);
   const selfText = show ? (
-    <ReactMarkdown source={getText} />
+    <ReactMarkdown aria-label="markdown" source={getText} />
   ) : (
-    <ReactMarkdown source={getText} />
+    <ReactMarkdown aria-label="markdown" source={getText} />
   );
 
   const validLinkCheckForThumbnail = post
@@ -46,17 +46,19 @@ export const PostListItem = ({ post }) => {
 
   const hasContentImg = post ? (
     validLinkCheckForContentImg ? (
-      <Card>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            alt={postData.subreddit}
-            height="140"
-            className={classes.cardMedia}
-            image={postData.url}
-          ></CardMedia>
-        </CardActionArea>
-      </Card>
+      <Link to={`/post/${postData.subreddit}/comments/${postData.id}#top`}>
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              alt={postData.subreddit}
+              height="140"
+              className={classes.cardMedia}
+              image={postData.url}
+            ></CardMedia>
+          </CardActionArea>
+        </Card>
+      </Link>
     ) : postData.url_overridden_by_dest ? (
       <a
         href={postData.url_overridden_by_dest}
@@ -146,6 +148,7 @@ export const PostListItem = ({ post }) => {
             className={classes.commentBtn}
           >
             <CommentIcon />
+            <p>Comments</p>
           </Link>
           <p className={classes.timeCreated}>
             {format(postData.created_utc * 1000)}
