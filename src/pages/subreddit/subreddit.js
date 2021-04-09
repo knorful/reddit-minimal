@@ -9,6 +9,7 @@ import {
   selectSubredditsAbouts,
   loadAboutDetailsBySubreddit,
   isLoadingSubredditAbouts,
+  reset,
 } from "../../features/subreddit/subredditSlice";
 import { PostListItem } from "../../components/PostListItem/PostListItem";
 import { Navbar } from "../../components/Navbar/Navbar";
@@ -24,11 +25,12 @@ export const Subreddit = () => {
   const subredditPosts = useSelector(selectSubredditPosts);
   const loadingSubredditPosts = useSelector(isLoadingSubredditPosts);
   const subredditAbout = useSelector(selectSubredditsAbouts);
-  const loadingSubredditAbouts = useSelector(isLoadingSubredditAbouts);
+  // const loadingSubredditAbouts = useSelector(isLoadingSubredditAbouts);
 
   const { reddit } = useParams();
 
   useEffect(() => {
+    dispatch(reset());
     dispatch(loadPostsBySubreddit(reddit));
     dispatch(loadAboutDetailsBySubreddit(reddit));
   }, [dispatch, reddit]);

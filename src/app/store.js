@@ -10,8 +10,8 @@ export default configureStore({
   reducer: {
     post: postSlice.reducer,
     posts: postsSlice.reducer,
-    subreddits: subredditsSlice.reducer,
     subreddit: subredditSlice.reducer,
+    subreddits: subredditsSlice.reducer,
     comments: commentsSlice.reducer,
     user: userSlice.reducer,
   },
