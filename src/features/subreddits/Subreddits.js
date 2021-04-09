@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectSubreddits, loadSubreddits } from "./subredditsSlice";
+import { selectSubreddits, loadSubreddits, reset } from "./subredditsSlice";
 import { Subreddit } from "../../components/Subreddit/Subreddit";
 import { SubredditSkeleton } from "../../components/Skeletons/SubredditSkeleton/Subreddit";
 import { Button } from "@material-ui/core";
@@ -24,6 +24,7 @@ export const Subreddits = () => {
     : subreddits.map((subreddit) => <Subreddit subreddit={subreddit} />);
 
   useEffect(() => {
+    // dispatch(reset());
     dispatch(loadSubreddits());
   }, [dispatch]);
 
