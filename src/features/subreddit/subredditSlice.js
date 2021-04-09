@@ -3,7 +3,7 @@ import { API } from "../../util/API";
 
 export const loadPostsBySubreddit = createAsyncThunk(
   "subreddit/loadPostsBySubreddit",
-  (subreddit) => API.loadPosts(subreddit)
+  async (subreddit) => await API.loadPosts(subreddit)
 );
 
 export const loadAboutDetailsBySubreddit = createAsyncThunk(
@@ -15,12 +15,20 @@ export const subredditSlice = createSlice({
   name: "subreddit",
   initialState: {
     subredditPosts: [],
-    loadingSubredditPosts: false,
+    loadingSubredditPosts: true,
     hasErrors: false,
 
     subredditAbout: [],
-    loadingSubredditAbout: false,
+    loadingSubredditAbout: true,
     hasAboutErrors: false,
+  },
+  reducers: {
+    reset: (state) =>
+      (state = {
+        ...state.initialState,
+        subredditPosts: [],
+        subredditAbout: [],
+      }),
   },
   extraReducers: (builder) => {
     builder
@@ -40,16 +48,16 @@ export const subredditSlice = createSlice({
 
       // About Subreddit
       .addCase(loadAboutDetailsBySubreddit.pending, (state, action) => {
-        state.loadingSubredditPosts = true;
+        state.loadingAbout = true;
         state.hasErrors = false;
       })
       .addCase(loadAboutDetailsBySubreddit.fulfilled, (state, action) => {
         state.subredditAbout = action.payload;
-        state.loadingSubredditPosts = false;
+        state.loadingAbout = false;
         state.hasErrors = false;
       })
       .addCase(loadAboutDetailsBySubreddit.rejected, (state, action) => {
-        state.loadingSubredditPosts = false;
+        state.loadingAbout = false;
         state.hasAboutErrors = true;
       });
   },
@@ -63,3 +71,5 @@ export const isLoadingSubredditPosts = (state) =>
 export const selectSubredditsAbouts = (state) => state.subreddit.subredditAbout;
 export const isLoadingSubredditAbouts = (state) =>
   state.subreddit.loadingSubredditAbout;
+
+export const { reset } = subredditSlice.actions;
