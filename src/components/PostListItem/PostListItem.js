@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { Avatar } from "@material-ui/core";
 import CommentIcon from "@material-ui/icons/Comment";
 import Card from "@material-ui/core/Card";
@@ -69,8 +69,6 @@ export const PostListItem = ({ post }) => {
       </a>
     ) : null
   ) : null;
-
-  console.log(overCount);
 
   return (
     <div className={classes.PostListItem}>
@@ -144,7 +142,7 @@ export const PostListItem = ({ post }) => {
         </div>
         <div className={classes.comment}>
           <Link
-            to={`/post/${postData.subreddit}/comments/${postData.id}`}
+            to={`/post/${postData.subreddit}/comments/${postData.id}#comments`}
             className={classes.commentBtn}
           >
             <CommentIcon />
