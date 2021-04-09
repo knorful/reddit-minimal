@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import SearchBar from "material-ui-search-bar";
+import SearchIcon from "@material-ui/icons/Search";
 import classes from "./Searchbar.module.css";
 import { loadSubreddits } from "../../../features/subreddits/subredditsSlice";
 
@@ -10,7 +10,8 @@ export const Searchbar = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const handleChange = (term) => {
+  const handleChange = ({ target }) => {
+    const term = target.value;
     setSearchTerm(term);
   };
 
@@ -21,13 +22,16 @@ export const Searchbar = () => {
 
   return (
     <div className={classes.Searchbar}>
-      <SearchBar
-        onChange={handleChange}
-        style={{ backgroundColor: "#f7f7f7", boxShadow: "none" }}
-        onRequestSearch={handleSearch}
-        placeholder="Search..."
-        aria-label="Search Button"
-      />
+      <form onSubmit={handleSearch}>
+        <input
+          onChange={handleChange}
+          placeholder="Search..."
+          aria-label="Search Button"
+        />
+        <button>
+          <SearchIcon />
+        </button>
+      </form>
     </div>
   );
 };
