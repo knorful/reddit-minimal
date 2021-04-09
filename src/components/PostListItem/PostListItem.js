@@ -146,6 +146,7 @@ export const PostListItem = ({ post }) => {
           <Link
             to={`/post/${postData.subreddit}/comments/${postData.id}#comments`}
             className={classes.commentBtn}
+            title="click here to see comments"
           >
             <CommentIcon />
             <p>Comments</p>
