@@ -15,9 +15,15 @@ export const Subreddit = ({ subreddit }) => {
     : null;
 
   const displayIcon = hasIcon ? (
-    <Avatar className={classes.icon} src={iconLink} />
+    <Avatar
+      className={classes.icon}
+      src={iconLink}
+      alt={subreddit.data.display_name}
+    />
   ) : (
-    <Avatar>{subreddit.data.display_name_prefixed.substring(2, 3)}</Avatar>
+    <Avatar alt={subreddit.data.display_name}>
+      {subreddit.data.display_name_prefixed.substring(2, 3)}
+    </Avatar>
   );
 
   return (

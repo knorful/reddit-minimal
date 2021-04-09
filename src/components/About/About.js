@@ -1,6 +1,5 @@
 import React from "react";
 import { Helpers } from "../../helpers/helpers";
-import { ReactMarkdown } from "react-markdown";
 import classes from "./About.module.css";
 
 export const About = ({

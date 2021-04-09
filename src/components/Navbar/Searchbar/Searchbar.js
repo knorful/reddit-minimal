@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import SearchBar from "material-ui-search-bar";
@@ -26,6 +26,7 @@ export const Searchbar = () => {
         style={{ backgroundColor: "#f7f7f7", boxShadow: "none" }}
         onRequestSearch={handleSearch}
         placeholder="Search..."
+        aria-label="Search Button"
       />
     </div>
   );
