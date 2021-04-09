@@ -34,15 +34,6 @@ export const Helpers = {
   },
 
   getVideo(post) {
-    //TODO: improve logic to check if post has reddit video in preview prop
-    // let hasPreviewProp = post.hasOwnProperty("preview");
-    // if (hasPreviewProp) {
-    //   if (post.preview.hasOwnProperty("reddit_video_preview")) {
-    //     return this.convertGifToMP4(
-    //       post.preview.reddit_video_preview.fallback_url
-    //       );
-    //     }
-    //   }
     const regex = /(gifv)/gi;
     if (post.is_video) {
       return post.secure_media.reddit_video.fallback_url;
