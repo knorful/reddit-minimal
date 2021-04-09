@@ -28,7 +28,7 @@ export const Searchbar = () => {
           placeholder="Search..."
           aria-label="Search Button"
         />
-        <button>
+        <button aria-label="search button">
           <SearchIcon />
         </button>
       </form>
