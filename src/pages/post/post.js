@@ -42,7 +42,7 @@ export const Post = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar id="top" />
       <main>
         <Container>
           {/* Post */}
@@ -120,8 +120,8 @@ export const Post = () => {
               <div className={classes.Comments}>
                 <h3 id="comments">Comments</h3>
                 {!loadingComments
-                  ? comments.map((comment) => (
-                      <Comment comment={comment.data} />
+                  ? comments.map((comment, i) => (
+                      <Comment key={`${comment}${i}`} comment={comment.data} />
                     ))
                   : Array(5)
                       .fill(0)

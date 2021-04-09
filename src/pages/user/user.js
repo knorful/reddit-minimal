@@ -6,6 +6,7 @@ import {
   selectUserData,
   loadAboutData,
   selectAboutData,
+  reset,
 } from "../../features/user/userSlice";
 import { PostListItem } from "../../components/PostListItem/PostListItem";
 import { Subreddits } from "../../features/subreddits/Subreddits";
@@ -22,6 +23,7 @@ export const User = () => {
   const selectedAboutData = useSelector(selectAboutData);
 
   useEffect(() => {
+    dispatch(reset());
     dispatch(loadUserData(user));
     dispatch(loadAboutData(user));
   }, [dispatch, user]);
