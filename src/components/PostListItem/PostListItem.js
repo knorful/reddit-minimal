@@ -18,6 +18,7 @@ export const PostListItem = ({ post }) => {
   const video = Helpers.getVideo(postData);
   const voteCount = Helpers.kFormatter(postData.ups);
   const author = postData.author;
+  const overCount = postData.selftext.length > 100;
   const getText = show
     ? Helpers.getSelfText(postData)
     : Helpers.getSelfText(postData).substring(0, 200);
@@ -69,6 +70,8 @@ export const PostListItem = ({ post }) => {
     ) : null
   ) : null;
 
+  console.log(overCount);
+
   return (
     <div className={classes.PostListItem}>
       <div className={classes.header}>
@@ -94,7 +97,7 @@ export const PostListItem = ({ post }) => {
           </Link>
           {selfText}
           <div className={classes.Btn}>
-            {postData.selftext.length ? (
+            {postData.selftext.length && overCount ? (
               show ? (
                 <Button
                   className={classes.showBtn}
