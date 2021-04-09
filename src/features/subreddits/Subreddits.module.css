@@ -14,9 +14,9 @@
   text-align: center;
   font-size: 1.2rem;
   font-weight: 500;
-  color: rgb(177, 177, 177);
+  color: rgb(65, 65, 65);
   margin-top: 0;
-  border-bottom: 1px solid rgb(185, 185, 185);
+  border-bottom: 2px solid rgb(65, 65, 65);
 }
 
 .expandBtn {

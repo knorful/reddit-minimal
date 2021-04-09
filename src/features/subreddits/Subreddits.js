@@ -24,7 +24,7 @@ export const Subreddits = () => {
     : subreddits.map((subreddit) => <Subreddit subreddit={subreddit} />);
 
   useEffect(() => {
-    // dispatch(reset());
+    dispatch(reset());
     dispatch(loadSubreddits());
   }, [dispatch]);
 

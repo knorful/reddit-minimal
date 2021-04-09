@@ -12,6 +12,13 @@ export const postsSlice = createSlice({
     isLoadingPosts: false,
     hasError: false,
   },
+  reducers: {
+    reset: (state) =>
+      (state = {
+        ...state.initialState,
+        posts: [],
+      }),
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loadPosts.pending, (state, action) => {
@@ -33,3 +40,5 @@ export const postsSlice = createSlice({
 export default postsSlice.reducer;
 export const selectAllPosts = (state) => state.posts.posts;
 export const isLoading = (state) => state.posts.isLoadingPosts;
+
+export const { reset } = postsSlice.actions;

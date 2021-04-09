@@ -20,6 +20,14 @@ export const userSlice = createSlice({
     loadingAboutData: false,
     hasErrorsAbout: false,
   },
+  reducers: {
+    reset: (state) =>
+      (state = {
+        ...state.initialState,
+        userData: [],
+        userAboutData: [],
+      }),
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loadUserData.pending, (state, action) => {
@@ -59,3 +67,5 @@ export const isLoadingUserData = (state) => state.user.loadUserData;
 
 export const selectAboutData = (state) => state.user.userAboutData;
 export const isLoadingAboutData = (state) => state.user.loadingAboutData;
+
+export const { reset } = userSlice.actions;
