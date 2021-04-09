@@ -43,3 +43,9 @@ figure {
   font-weight: 500;
   color: rgb(139, 139, 139);
 }
+@media only screen and (max-width: 340px) {
+  .headerContent {
+    flex-direction: column;
+    align-items: center;
+  }
+}
