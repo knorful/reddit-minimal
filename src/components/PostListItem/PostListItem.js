@@ -18,10 +18,13 @@ export const PostListItem = ({ post }) => {
   const video = Helpers.getVideo(postData);
   const voteCount = Helpers.kFormatter(postData.ups);
   const author = postData.author;
+  const getText = show
+    ? Helpers.getSelfText(postData)
+    : Helpers.getSelfText(postData).substring(0, 200);
   const selfText = show ? (
-    <ReactMarkdown source={Helpers.getSelfText(postData)} />
+    <ReactMarkdown source={getText} />
   ) : (
-    <ReactMarkdown source={Helpers.getSelfText(postData).substring(0, 300)} />
+    <ReactMarkdown source={getText} />
   );
 
   const validLinkCheckForThumbnail = post
@@ -141,10 +144,7 @@ export const PostListItem = ({ post }) => {
             to={`/post/${postData.subreddit}/comments/${postData.id}`}
             className={classes.commentBtn}
           >
-            <button>
-              <CommentIcon />
-              <p style={{ fontWeight: "500", fontSize: "1rem" }}>COMMENTS</p>
-            </button>
+            <CommentIcon />
           </Link>
           <p className={classes.timeCreated}>
             {format(postData.created_utc * 1000)}
