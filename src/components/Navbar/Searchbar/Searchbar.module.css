@@ -8,6 +8,7 @@ form {
   background-color: #ecebeb;
   border-radius: 20px 0 0 20px;
   padding: 10px 30px;
+  width: 33.3%;
 }
 
 input:focus,
@@ -29,8 +30,9 @@ button:hover {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 281px) {
-  .Searchbar {
-    margin-left: 20vw;
+@media only screen and (max-width: 400px) {
+  .Searchbar input {
+    width: 66.6%;
+    margin: 0px;
   }
 }
