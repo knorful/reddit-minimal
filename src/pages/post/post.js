@@ -17,6 +17,7 @@ import { Helpers } from "../../helpers/helpers";
 import { Subreddits } from "../../features/subreddits/Subreddits";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { PostSkeleton } from "../../components/Skeletons/PostSkeleton/Post";
+import { CommentsSkeleton } from "../../components/Skeletons/CommentsSkeleton/CommentsSkeleton";
 import { format } from "timeago.js";
 import ReactMarkdown from "react-markdown";
 import classes from "./post.module.css";
@@ -117,12 +118,16 @@ export const Post = () => {
 
               {/* Comments */}
               <div className={classes.Comments}>
-                <h3>Comments</h3>
+                <h3 id="comments">Comments</h3>
                 {!loadingComments
                   ? comments.map((comment) => (
                       <Comment comment={comment.data} />
                     ))
-                  : null}
+                  : Array(5)
+                      .fill(0)
+                      .map((comment, id) => (
+                        <CommentsSkeleton key={`${comment}${id}`} />
+                      ))}
               </div>
             </div>
             <aside>
