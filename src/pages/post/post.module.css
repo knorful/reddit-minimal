@@ -9,7 +9,7 @@
   border-radius: 4px;
   padding: 20px;
   border: 1px solid #ff4500;
-  max-width: 800px;
+  max-width: 90%;
 }
 
 .header {
@@ -52,7 +52,7 @@
 }
 
 .postImg {
-  max-width: 800px;
+  max-width: 100%;
   text-align: center;
 }
 
