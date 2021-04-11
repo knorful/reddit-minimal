@@ -17,7 +17,7 @@ export const Posts = () => {
   return (
     <section className={classes.Posts}>
       {loading
-        ? Array(25)
+        ? Array(5)
             .fill(0)
             .map((skeleton, key) => (
               <div key={key} style={{ marginBottom: "20px" }}>
