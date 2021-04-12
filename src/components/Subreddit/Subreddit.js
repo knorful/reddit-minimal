@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { Avatar } from "@material-ui/core";
 import { Helpers } from "../../helpers/helpers";
 import classes from "./Subreddit.module.css";
@@ -27,7 +27,7 @@ export const Subreddit = ({ subreddit }) => {
   );
 
   return (
-    <Link to={`/subreddit/${subreddit.data.display_name}`}>
+    <Link to={`/subreddit/${subreddit.data.display_name}#top`}>
       <div className={classes.Subreddit}>
         {displayIcon}
         <div className={classes.subInfo}>
