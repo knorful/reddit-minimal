@@ -18,6 +18,12 @@
   font-weight: bold;
 }
 
+.author:hover {
+  text-decoration: underline;
+  color: rgb(179, 179, 179);
+  transition: all 0.2s;
+}
+
 .timeCreated {
   font-size: 0.8rem;
   margin-top: 0;
