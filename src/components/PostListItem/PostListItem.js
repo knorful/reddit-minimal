@@ -77,12 +77,12 @@ export const PostListItem = ({ post }) => {
       <div className={classes.header}>
         {hasThumbnail}
         <div className={classes.headerContent}>
-          <Link to={`/subreddit/${postData.subreddit}`}>
+          <Link to={`/subreddit/${postData.subreddit}#top`}>
             <p className={classes.subredditName}>
               {postData.subreddit_name_prefixed}
             </p>
           </Link>
-          <Link to={`/user/${author}`}>
+          <Link to={`/user/${author}#top`}>
             <p className={classes.author}>Posted by u/{author}</p>
           </Link>
         </div>
@@ -91,7 +91,7 @@ export const PostListItem = ({ post }) => {
         <div className={classes.wrapper}>
           <Link
             className={classes.postTitle}
-            to={`/post/${postData.subreddit}/comments/${postData.id}`}
+            to={`/post/${postData.subreddit}/comments/${postData.id}#top`}
           >
             <h3>{Helpers.ampersandConverter(postData.title)}</h3>
           </Link>
