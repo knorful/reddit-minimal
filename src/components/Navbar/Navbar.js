@@ -7,7 +7,7 @@ import classes from "./Navbar.module.css";
 
 export const Navbar = () => {
   return (
-    <header>
+    <header id="top">
       <div className={classes.Navbar}>
         <Container>
           <div className={classes.NavbarContent}>
