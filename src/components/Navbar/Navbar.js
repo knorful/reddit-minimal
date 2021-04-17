@@ -9,7 +9,7 @@ export const Navbar = () => {
   return (
     <header id="top">
       <div className={classes.Navbar}>
-        <Container maxWidth="md">
+        <Container>
           <div className={classes.NavbarContent}>
             <Link className={classes.logo} to="/">
               <RedditIcon className={classes.redditLogo} />
