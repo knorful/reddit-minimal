@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { loadSubreddits } from "../../../features/subreddits/subredditsSlice";
+import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import fetch from "cross-fetch";
 import TextField from "@material-ui/core/TextField";
@@ -10,6 +8,8 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import SearchIcon from "@material-ui/icons/Search";
 import parse from "autosuggest-highlight/parse";
 import match from "autosuggest-highlight/match";
+import classes from "./Searchbar.module.css";
+import { Helpers } from "../../../helpers/helpers";
 
 function sleep(delay = 0) {
   return new Promise((resolve) => {
@@ -35,11 +35,10 @@ const CssTextField = withStyles({
 })(TextField);
 
 export const Searchbar = () => {
-  const [searchTerm, setSearchTerm] = useState("Search...");
+  const [searchTerm, setSearchTerm] = useState("");
   const [open, setOpen] = React.useState(false);
   const [options, setOptions] = React.useState([]);
   const loading = open && options.length === 0;
-  const dispatch = useDispatch();
 
   React.useEffect(() => {
     let active = true;
@@ -69,14 +68,9 @@ export const Searchbar = () => {
     setSearchTerm(term);
   };
 
-  const handleSearch = () => {
-    dispatch(loadSubreddits(searchTerm));
-    // history.push(`/subreddit/${searchTerm}`);
-  };
-
   return (
     <Autocomplete
-      style={{ width: 300 }}
+      style={{ width: 300, padding: "0" }}
       disableClearable={false}
       open={open}
       onOpen={() => {
@@ -85,15 +79,19 @@ export const Searchbar = () => {
       onClose={() => {
         setOpen(false);
       }}
+      loadingText="Searching, one sec..."
       getOptionSelected={(option, value) => option.name === value.name}
       getOptionLabel={(option) => option.name}
       options={options}
       loading={loading}
       renderInput={(params) => (
         <CssTextField
+          style={{ padding: "0" }}
           onChange={handleChange}
           {...params}
-          placeholder={searchTerm}
+          placeholder="Search..."
+          value={searchTerm}
+          aria-label="Search field"
           variant="outlined"
           InputProps={{
             ...params.InputProps,
@@ -112,60 +110,28 @@ export const Searchbar = () => {
       renderOption={(option, { inputValue }) => {
         const matches = match(option.name, inputValue);
         const parts = parse(option.name, matches);
-        console.log("option", matches);
+        const redditSubs = option.numSubscribers;
         return (
-          <div>
+          <Link to={`/subreddit/${option.name}`}>
             {parts.map((part, index) => (
               <span
                 key={index}
-                style={{ fontWeight: part.highlight ? 700 : 400 }}
+                className={classes.searchLinks}
+                style={{
+                  fontWeight: part.highlight ? 700 : 400,
+                  fontSize: "1.13rem",
+                  color: "black",
+                }}
               >
                 {part.text}
               </span>
             ))}
-          </div>
+            <p style={{ fontSize: ".85rem" }}>
+              {Helpers.kFormatter(redditSubs)} members
+            </p>
+          </Link>
         );
       }}
     />
   );
 };
-
-// export const Searchbar = () => {
-//   const [searchTerm, setSearchTerm] = useState("");
-//   const dispatch = useDispatch();
-//   const history = useHistory();
-//   const classes = useStyles();
-
-//   const handleChange = ({ target }) => {
-//     const term = target.value;
-//     setSearchTerm(term);
-//   };
-
-//   const handleSearch = () => {
-//     dispatch(loadSubreddits(searchTerm));
-//     history.push(`/subreddit/${searchTerm}`);
-//   };
-
-//   return (
-//     <div>
-//       <form onSubmit={handleSearch}>
-//         <CssTextField
-//           onChange={handleChange}
-//           aria-label="Search Button"
-//           id="outlined-basic"
-//           placeholder="Search Communities.."
-//           variant="outlined"
-//           fullWidth
-//           InputProps={{
-//             startAdornment: (
-//               <InputAdornment position="start">
-//                 <SearchIcon />
-//               </InputAdornment>
-//             ),
-//           }}
-//         />
-//       </form>
-//       {searchTerm ? <div>searching</div> : null}
-//     </div>
-//   );
-// };
