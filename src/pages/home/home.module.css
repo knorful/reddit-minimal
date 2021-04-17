@@ -3,8 +3,14 @@
 }
 
 .App main {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+@media only screen and (max-width: 980px) {
+  .App main {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media only screen and (max-width: 420px) {
