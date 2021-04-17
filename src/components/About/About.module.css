@@ -1,7 +1,6 @@
 .About {
   width: 370px;
   margin-top: 20px;
-  border: 1px solid #ff4552;
   border-radius: 4px;
   background-color: white;
   flex-shrink: 2;
@@ -13,10 +12,8 @@
   position: relative;
   left: 0.5px;
   z-index: 2;
-  background-color: #303030;
+  background-color: #707070;
   opacity: 1;
-  background-image: radial-gradient(#ff3838 1px, transparent 1px),
-    radial-gradient(#ff3838 1px, #303030 1px);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
 }

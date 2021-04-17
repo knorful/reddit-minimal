@@ -9,7 +9,6 @@ export const About = ({
   userImg,
   bannerImg,
   title,
-  created,
   subCount,
   active,
 }) => {
@@ -25,10 +24,7 @@ export const About = ({
             alt={`${name} banner`}
           />
         ) : (
-          <div
-            className={classes.banner}
-            style={{ height: "100px", backgroundColor: "#FF4500" }}
-          ></div>
+          <div className={classes.banner} style={{ height: "100px" }}></div>
         )}
         {userImg ? (
           <img
