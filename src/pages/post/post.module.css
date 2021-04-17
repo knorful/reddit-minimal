@@ -1,6 +1,6 @@
 .PostContainer {
-  display: flex;
-  flex-direction: row-reverse;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
 
 .Post {
@@ -52,7 +52,8 @@
 }
 
 .postImg {
-  max-width: 100%;
+  max-height: 100vh;
+  width: auto;
   text-align: center;
 }
 

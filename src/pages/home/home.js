@@ -16,7 +16,7 @@ export const Home = () => {
           <aside className={classes.subreddits}>
             <Subreddits />
           </aside>
-          <Container>
+          <Container style={{ padding: "0" }}>
             <Posts />
           </Container>
         </main>
