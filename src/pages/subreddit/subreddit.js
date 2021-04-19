@@ -51,8 +51,8 @@ export const Subreddit = () => {
   const createdDate = subredditAbout.created_utc;
   const subCount = subredditAbout.subscribers;
 
-  const showSubredditsByName = subredditPosts.map((subredditPost) => (
-    <PostListItem post={subredditPost} />
+  const showSubredditsByName = subredditPosts.map((subredditPost, i) => (
+    <PostListItem key={i} post={subredditPost} />
   ));
 
   return (
@@ -81,8 +81,8 @@ export const Subreddit = () => {
             {loadingSubredditPosts
               ? Array(8)
                   .fill(0)
-                  .map((el) => (
-                    <div className={classes.skeleton}>
+                  .map((el, i) => (
+                    <div key={i} className={classes.skeleton}>
                       <PostListItemSkeleton />
                     </div>
                   ))
