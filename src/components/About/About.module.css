@@ -67,9 +67,3 @@ p {
   color: rgb(119, 119, 119);
   margin: 8px 0;
 }
-
-@media only screen and (max-width: 980px) {
-  .About {
-    display: none;
-  }
-}
