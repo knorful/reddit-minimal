@@ -34,3 +34,15 @@
 .trending h3 {
   margin: 0;
 }
+
+@media only screen and (max-width: 550px) {
+  .FilterIcons {
+    flex-direction: column;
+  }
+
+  .hot,
+  .top,
+  .trending {
+    margin-bottom: 20px;
+  }
+}
