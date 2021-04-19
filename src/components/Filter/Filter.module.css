@@ -23,6 +23,12 @@
   color: rgb(73, 73, 73);
 }
 
+.hot:hover,
+.top:hover,
+.trending:hover {
+  color: rgb(136, 135, 135);
+}
+
 .hot h3,
 .top h3,
 .trending h3 {
