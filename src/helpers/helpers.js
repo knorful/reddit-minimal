@@ -60,6 +60,7 @@ export const Helpers = {
       "July",
       "August",
       "September",
+      "October",
       "November",
       "December",
     ];
@@ -67,8 +68,7 @@ export const Helpers = {
     d.setUTCSeconds(utc);
     let year = d.getFullYear();
     let day = d.getDate();
-    let month = months[d.getMonth()];
-
+    let month = months[d.getMonth() - 1];
     return { year, day, month };
   },
 };
