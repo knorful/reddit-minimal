@@ -11,6 +11,10 @@ const appRoutes = [
     page: Home,
   },
   {
+    path: "/filter/:filterTopic",
+    page: Home,
+  },
+  {
     path: "/subreddit/:reddit",
     page: Subreddit,
   },

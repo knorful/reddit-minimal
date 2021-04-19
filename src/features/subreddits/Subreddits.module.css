@@ -28,7 +28,7 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 950px) {
   .Subreddits {
     display: none;
   }

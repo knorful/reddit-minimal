@@ -8,11 +8,23 @@ export const API = {
     return reddits;
   },
 
-  async loadPosts(reddit = "popular") {
-    const posts = await axios
-      .get(`https://www.reddit.com/r/${reddit}.json`)
-      .then((res) => res.data.data.children);
-    return posts;
+  async loadPosts(reddit, filtered) {
+    console.log("reddit", reddit, "filtered", filtered);
+    if (reddit !== "top" && reddit !== "rising") {
+      if (!reddit) {
+        reddit = "popular";
+      }
+      return await axios
+        .get(`https://www.reddit.com/r/${reddit}.json`)
+        .then((res) => res.data.data.children);
+    } else {
+      return await axios
+        .get(`https://www.reddit.com/${reddit}.json?sort=new`)
+        .then((res) => {
+          console.log("return object", res);
+          return res.data.data.children;
+        });
+    }
   },
 
   async loadComments(reddit, id) {

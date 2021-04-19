@@ -43,22 +43,30 @@ export const About = ({
             <>
               <div className={classes.karma}>
                 <h3>Karma</h3>
-                <p>{Helpers.kFormatter(karma)}</p>
+                <p style={{ textAlign: "center" }}>
+                  {Helpers.kFormatter(karma)}
+                </p>
               </div>
               <div className={classes.cake_day}>
                 <h3>Cake Day</h3>
-                <p>{`${creationDay.month} ${creationDay.day}, ${creationDay.year}`}</p>
+                <p
+                  style={{ textAlign: "center" }}
+                >{`${creationDay.month} ${creationDay.day}, ${creationDay.year}`}</p>
               </div>
             </>
           ) : (
             <>
               <div className={classes.karma}>
                 <h3>Members</h3>
-                <p>{Helpers.kFormatter(subCount)}</p>
+                <p style={{ textAlign: "center" }}>
+                  {Helpers.kFormatter(subCount)}
+                </p>
               </div>
               <div className={classes.cake_day}>
                 <h3>Online</h3>
-                <p>{Helpers.kFormatter(active)}</p>
+                <p style={{ textAlign: "center" }}>
+                  {Helpers.kFormatter(active)}
+                </p>
               </div>
             </>
           )}

@@ -95,7 +95,7 @@ export const PostListItem = ({ post }) => {
           >
             <h3>{Helpers.ampersandConverter(postData.title)}</h3>
           </Link>
-          {selfText}
+          <p className={classes.selfText}>{selfText}</p>
           <div className={classes.Btn}>
             {postData.selftext.length ? (
               show ? (

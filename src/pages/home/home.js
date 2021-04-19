@@ -3,6 +3,7 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import { Posts } from "../../features/posts/Posts";
 import { Subreddits } from "../../features/subreddits/Subreddits";
 import { Container } from "@material-ui/core";
+import { Filter } from "../../components/Filter/Filter";
 import classes from "./home.module.css";
 
 export const Home = () => {
@@ -11,14 +12,15 @@ export const Home = () => {
       <header className="App-header">
         <Navbar />
       </header>
-      <Container>
+      <Container className={classes.mainContainer}>
         <main>
+          <Container className={classes.subredditContainer}>
+            <Filter />
+            <Posts />
+          </Container>
           <aside className={classes.subreddits}>
             <Subreddits />
           </aside>
-          <Container style={{ padding: "0" }}>
-            <Posts />
-          </Container>
         </main>
       </Container>
     </div>

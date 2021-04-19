@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { loadPosts, selectAllPosts, isLoading } from "./postsSlice";
 import { PostListItem } from "../../components/PostListItem/PostListItem";
 import { PostListItemSkeleton } from "../../components/Skeletons/PostListItemSkeleton/PostListItem";
@@ -9,10 +10,11 @@ export const Posts = () => {
   const dispatch = useDispatch();
   const posts = useSelector(selectAllPosts);
   const loading = useSelector(isLoading);
+  const { filterTopic } = useParams();
 
   useEffect(() => {
-    dispatch(loadPosts());
-  }, [dispatch]);
+    dispatch(loadPosts(filterTopic));
+  }, [dispatch, filterTopic]);
 
   return (
     <section className={classes.Posts}>

@@ -20,6 +20,7 @@ function sleep(delay = 0) {
 const CssTextField = withStyles({
   root: {
     "& .MuiOutlinedInput-root": {
+      padding: "3.5px 3px",
       "&:hover fieldset": {
         borderColor: "red",
       },
@@ -29,8 +30,7 @@ const CssTextField = withStyles({
     },
     backgroundColor: "white",
     borderRadius: "4px",
-    width: "30vw",
-    minWidth: "200px",
+    width: "100%",
   },
 })(TextField);
 
@@ -70,7 +70,7 @@ export const Searchbar = () => {
 
   return (
     <Autocomplete
-      style={{ width: 300, padding: "0" }}
+      style={{ maxWidth: "600px" }}
       disableClearable={false}
       open={open}
       onOpen={() => {

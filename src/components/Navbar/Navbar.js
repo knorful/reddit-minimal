@@ -9,17 +9,17 @@ export const Navbar = () => {
   return (
     <header id="top">
       <div className={classes.Navbar}>
-        <Container>
-          <div className={classes.NavbarContent}>
-            <Link className={classes.logo} to="/">
-              <RedditIcon className={classes.redditLogo} />
-              <h2>
-                Reddit <span>Minimal</span>
-              </h2>
-            </Link>
+        <div className={classes.NavbarContent}>
+          <Link className={classes.logo} to="/">
+            <RedditIcon className={classes.redditLogo} />
+            <h2>
+              Reddit <span>Minimal</span>
+            </h2>
+          </Link>
+          <Container maxWidth="md">
             <Searchbar />
-          </div>
-        </Container>
+          </Container>
+        </div>
       </div>
     </header>
   );

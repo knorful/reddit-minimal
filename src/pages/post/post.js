@@ -44,7 +44,7 @@ export const Post = () => {
     <>
       <Navbar id="top" />
       <main>
-        <Container maxWidth="xl">
+        <Container className={classes.postContainer}>
           {/* Post */}
           <div className={classes.PostContainer}>
             <div className={classes.Post}>
