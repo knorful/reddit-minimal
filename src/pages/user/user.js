@@ -61,9 +61,15 @@ export const User = () => {
             <Subreddits />
           </aside>
           <section>
-            {approvedUserData.map((userData, key) => (
-              <PostListItem key={key} post={userData} />
-            ))}
+            {approvedUserData.length ? (
+              approvedUserData.map((userData, key) => (
+                <PostListItem key={key} post={userData} />
+              ))
+            ) : (
+              <h1 style={{ textAlign: "center", color: "rgb(109, 109, 109)" }}>
+                No Posts
+              </h1>
+            )}
           </section>
         </main>
       </Container>
