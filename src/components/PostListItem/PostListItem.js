@@ -23,9 +23,17 @@ export const PostListItem = ({ post }) => {
     ? Helpers.getSelfText(postData)
     : Helpers.getSelfText(postData).substring(0, 200);
   const selfText = show ? (
-    <ReactMarkdown aria-label="markdown" source={getText} />
+    <ReactMarkdown
+      className={classes.selfText}
+      aria-label="markdown"
+      source={getText}
+    />
   ) : (
-    <ReactMarkdown aria-label="markdown" source={getText} />
+    <ReactMarkdown
+      className={classes.selfText}
+      aria-label="markdown"
+      source={getText}
+    />
   );
 
   const validLinkCheckForThumbnail = post
@@ -95,7 +103,7 @@ export const PostListItem = ({ post }) => {
           >
             <h3>{Helpers.ampersandConverter(postData.title)}</h3>
           </Link>
-          <p className={classes.selfText}>{selfText}</p>
+          {selfText}
           <div className={classes.Btn}>
             {postData.selftext.length ? (
               show ? (
