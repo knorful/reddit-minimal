@@ -9,9 +9,9 @@ This is the main repo codebase of [Reddit Minimal](https://jovial-kare-0edb36.ne
 1. [Introduction](#introduction)
   1. [Vision](#vision)
 2. [Codebase](#paragraph1)
-    1. [Technologies](#subparagraph1)
-    2. [Folder Structure](#subparagraph2)
-    3. [Code Style](#subparagraph3)
+    - [Technologies](#subparagraph1)
+    - [Folder Structure](#subparagraph2)
+    - [Code Style](#subparagraph3)
 3. [Setup Process](#paragraph2)
 4. [Setup Process](#paragraph3)
 
@@ -25,3 +25,23 @@ Reddit Client Redesign is the unofficial Reddit frontend app concept to simplify
 ### Technologies
 - React - Front End Library
 - Redux - State Management
+
+### Folder Structure
+.
++-- _config.yml
++-- _drafts
+|   +-- begin-with-the-crazy-ideas.textile
+|   +-- on-simplicity-in-technology.markdown
++-- _includes
+|   +-- footer.html
+|   +-- header.html
++-- _layouts
+|   +-- default.html
+|   +-- post.html
++-- _posts
+|   +-- 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   +-- 2009-04-26-barcamp-boston-4-roundup.textile
++-- _data
+|   +-- members.yml
++-- _site
++-- index.html
