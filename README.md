@@ -27,6 +27,14 @@ Reddit Client Redesign is the unofficial Reddit frontend app concept to simplify
 - Redux - State Management
 
 ### Folder Structure
-* assets
-  * jump
-  * make
+reddit-minimal 
+  - public # project files used for frontend
+  - src # frontend SPA
+  
+reddit-minial/src
+  * app         # top level component
+  * components  # reusable parts
+  * features    # redux slices
+  * helpers     # helper methods 
+  * pages       # different view pages
+  * util        # api calls
