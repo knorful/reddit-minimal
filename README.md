@@ -39,5 +39,5 @@ reddit-minial/src
 
 ### Setup Process <a id="setup"></a>
 * Clone or download the repo
-* Open the directory and run yarn to install
-* Run development application by using yarn start
+* Open the directory and run **npm** to install
+* Run development application by using **npm start**
