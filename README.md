@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+![image](https://user-images.githubusercontent.com/29739432/115553809-743c9c00-a273-11eb-8486-1464ae3d9ee3.png)
+
+
+This is the main repo codebase of [Reddit Minimal](https://jovial-kare-0edb36.netlify.app/?#/)
 
 ## Available Scripts
 
