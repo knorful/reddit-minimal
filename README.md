@@ -12,6 +12,7 @@ This is the main repo codebase of [Reddit Minimal](https://jovial-kare-0edb36.ne
     - [Technologies](#technologies)
     - [Folder Structure](#structure)
 3. [Setup Process](#setup)
+4. [Acknowledgements](#acknowledgements)
 
 ## Introduction <a id="introduction"></a>
 ### Vision <a id="vision"></a>
@@ -41,3 +42,7 @@ reddit-minial/src
 * Clone or download the repo
 * Open the directory and run **npm** to install
 * Run development application by using **npm start**
+
+## Acknowledgements <a id="acknowledgements"></a>
+This website was built using [Reddit's API](https://www.reddit.com/dev/api/) to gather current trending reddits. It also was used to create the searching functionality that allows users to search by reddit community.
+
