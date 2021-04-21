@@ -20,7 +20,7 @@ It is difficult to change and adapt to different trends and designs as a company
 Reddit Client Redesign is the unofficial Reddit frontend app concept to simplify and tune the browsing experience of the users
 
 ## Codebase <a id="codebase"></a>
-###Technologies <a id="technologies"></a>
+### Technologies <a id="technologies"></a>
 - React - Front End Library
 - Redux - State Management
 
