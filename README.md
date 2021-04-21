@@ -37,7 +37,7 @@ reddit-minial/src
   * pages       # different view pages
   * util        # api calls
 
-### Setup Process <a id="setup"></a>
+## Setup Process <a id="setup"></a>
 * Clone or download the repo
 * Open the directory and run **npm** to install
 * Run development application by using **npm start**
