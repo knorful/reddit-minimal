@@ -8,12 +8,10 @@ This is the main repo codebase of [Reddit Minimal](https://jovial-kare-0edb36.ne
 ## Table of Contents
 1. [Introduction](#introduction)
   1. [Vision](#vision)
-2. [Codebase](#paragraph1)
-    - [Technologies](#subparagraph1)
-    - [Folder Structure](#subparagraph2)
-    - [Code Style](#subparagraph3)
-3. [Setup Process](#paragraph2)
-4. [Setup Process](#paragraph3)
+2. [Codebase](#codebase)
+    - [Technologies](#technologies)
+    - [Folder Structure](#structure)
+3. [Setup Process](#setup)
 
 ## Introduction <a id="introduction"></a>
 ### Vision <a id="vision"></a>
@@ -21,12 +19,12 @@ It is difficult to change and adapt to different trends and designs as a company
 
 Reddit Client Redesign is the unofficial Reddit frontend app concept to simplify and tune the browsing experience of the users
 
-## Codebase
-### Technologies
+## Codebase <a id="codebase"></a>
+###Technologies <a id="technologies"></a>
 - React - Front End Library
 - Redux - State Management
 
-### Folder Structure
+### Folder Structure <a id="structure"></a>
 reddit-minimal 
   - public # project files used for frontend
   - src # frontend SPA
@@ -38,3 +36,8 @@ reddit-minial/src
   * helpers     # helper methods 
   * pages       # different view pages
   * util        # api calls
+
+### Setup Process <a id="setup"></a>
+* Clone or download the repo
+* Open the directory and run yarn to install
+* Run development application by using yarn start
