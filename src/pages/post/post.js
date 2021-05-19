@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Container } from "@material-ui/core";
 import { useParams, Link } from "react-router-dom";
+import { HashLink as HLink } from "react-router-hash-link";
 import { useSelector, useDispatch } from "react-redux";
 import {
   loadCommentsForPostId,
@@ -53,7 +54,9 @@ export const Post = () => {
               ) : video ? (
                 <>
                   <div className={classes.header}>
-                    <p className={classes.headerAuthor}>{post.author}</p>
+                    <HLink to={`/user/${post.author}`}>
+                      <p className={classes.headerAuthor}>{post.author}</p>
+                    </HLink>
                     <p className={classes.headerTime}>
                       {format(post.created_utc * 1000)}
                     </p>
@@ -71,8 +74,9 @@ export const Post = () => {
               ) : image ? (
                 <>
                   <div className={classes.header}>
-                    <p className={classes.headerAuthor}>{post.author}</p>
-
+                    <HLink to={`/user/${post.author}`}>
+                      <p className={classes.headerAuthor}>{post.author}</p>
+                    </HLink>
                     <p className={classes.headerTime}>
                       {format(post.created_utc * 1000)}
                     </p>
@@ -100,7 +104,9 @@ export const Post = () => {
               ) : (
                 <>
                   <div className={classes.header}>
-                    <p className={classes.headerAuthor}>{post.author}</p>
+                    <HLink to={`/user/${post.author}`}>
+                      <p className={classes.headerAuthor}>{post.author}</p>
+                    </HLink>
                     <p className={classes.headerTime}>
                       {format(post.created_utc * 1000)}
                     </p>
