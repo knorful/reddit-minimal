@@ -6,6 +6,7 @@ import { Container } from "@material-ui/core";
 import { Filter } from "../../components/Filter/Filter";
 import classes from "./home.module.css";
 
+// Landing Page of Reddit Minimal
 export const Home = () => {
   return (
     <div className={classes.App}>
